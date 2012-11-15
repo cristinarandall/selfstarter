@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   def send_message
 
 
-      Notifier.company_message(params[:message], params[:name], "", params[:email", 1)
+      Notifier.company_message(params[:message], params[:name], "", params[:email], 1)
 
       redirect_to "/products"
 
