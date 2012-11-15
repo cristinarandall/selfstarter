@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+<%= stylesheet_link_tag "application.css", "checkout.css", "main.css" %>
+
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title><%= Settings.product_name %></title>
+    <%= javascript_include_tag "application" %>
+
+<style>
+
+#login-button .blue_button
+{
+padding-left:30px;
+
+}
+.total {
+border-top: 1px solid #6B6B6B;
+margin-top: 10px;
+width: 300px;
+}
+.blue_button.reserve{
+cursor:pointer;
+}
+
+
+#about .about-inner h5{
+font-family: "Helvetica Neue","Helvetica","Arial";
+font-size: 20px;
+margin-bottom: 10px;
+color: #4B4B4B;
+}
+
+</style>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

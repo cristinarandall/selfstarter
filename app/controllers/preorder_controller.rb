@@ -1,7 +1,13 @@
 class PreorderController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :ipn
+  layout 'application'
 
   def index
+
+
+   @products = Product.find(:all)
+
+
   end
 
   def checkout
@@ -9,7 +15,29 @@ class PreorderController < ApplicationController
 
   def prefill
     @user  = User.find_or_create_by_email!(params[:email])
-    @order = Order.prefill!(:name => Settings.product_name, :price => Settings.price, :user_id => @user.id)
+
+   if param[:id]
+   @product = Product.find(params[:id])
+   end
+
+   if @product   
+    @order = Order.prefill!(:name => @product.name, :price => @product.price)
+   end    
+
+
+
+   @item1 = Item.create(:quantity=> params[:product_1], :product_1=>params[:product_id_1]) 
+   @item2 = Item.create(:quantity=> params[:product_1], :product_1=>params[:product_id_1])
+   @item3 = Item.create(:quantity=> params[:product_1], :product_1=>params[:product_id_1])
+   @item4 = Item.create(:quantity=> params[:product_1], :product_1=>params[:product_id_1])
+
+   
+
+
+
+
+ 
+    #@order = Order.prefill!(:name => Settings.product_name, :price => Settings.price, :user_id => @user.id)
 
     # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
     # Then, if they confirm the payment, Amazon POSTs us their shipping details and phone number

@@ -1,0 +1,113 @@
+
+<div id="wrapper">
+<div id="container">
+
+    <div id="header">
+      <ul>
+        <li class="logo"><a href="/">Lockitron</a></li>
+          <li class="profile">
+            <a href="/account/login" class="logout">Sign in</a>
+          </li>
+      </ul>
+      <div style="clear:both"></div>
+    </div>
+
+    <div id="content">
+
+		<!-- yield start -->
+		<link href="/assets/login-76944e0097527c01541b37c25d34afe0.css" media="screen" rel="stylesheet" type="text/css">
+<div class="content">
+
+		<div id="account">
+
+			<div id="login">
+				
+			<div class="header">
+			<h3> Pre-order</h3>
+			</div>
+			
+				<div class="settingsContent" id="login-form">
+				
+
+<%= form_tag({:controller=> 'preorder', :action => "prefill"}, :id => "order-form", :class=>"fade", :method=>'post') do %>
+
+
+
+					  <div class="clear">
+					    <label for="user_email">Email</label>
+					    <input id="user_email" name="user_email" size="30" type="text">
+					  </div>
+
+
+<div class="form-row">
+            
+<label style="margin-top:70px;">Select Your Style</label>
+
+<span class="item-row">
+<input id="user_email" name="product_1" class="quantity" name="user[email]" size="30" type="number" min="1" max="50">
+ x $39 <a href="javascript:void(0);" class="ordertype-item">Classic Black</a><br>
+</span>
+
+<span class="item-row">
+<input id="user_email" name="product_2" class="quantity" size="30" type="number" min="1" max="50">
+ x $49 <a href="javascript:void(0);" class="ordertype-item">Royal Blue</a><br>
+</span>
+
+
+<span class="item-row">
+<input id="user_email" name="product_3" class="quantity" size="30" type="number" min="1" max="50">
+> x $49 <a href="javascript:void(0);" class="ordertype-item">Orange Soda</a><br>
+</span>
+
+<span class="item-row">
+<input id="user_email" name="product_4" class="quantity" size="30" type="number" min="1" max="50">
+ x $49 <a href="javascript:void(0);" class="ordertype-item">Sizzling Red</a><br>
+</span>
+
+
+<input type="hidden" name="total" value id="total_cost" /> 
+
+
+            <div class="total">
+            $<span id="order-total">0</span>.00 USD Total
+            </div>
+          </div>
+
+
+
+	
+					<div id="login-button-container">
+						<div id="login-forgot"><a href="/account/forgot"> </a></div>
+						<div id="login-button"><a class="blue_button reserve" name="commit" > Submit Payment</a></div> 
+						<div class="clear"></div>
+					</div>
+<% end %>
+				</div>
+			</div>
+
+			<div id="about">
+				<div class="about-inner">
+					<h5> When will I get my Order</h5> 
+We are in the process of making our production tools! The first batch of Cobra Wallets will ship soon. Submit your payment and we will keep you updated via email.
+					<br><br>
+
+                                        <h5> Can I manage my order?</h5>        
+Yes! Send us a note regarding the changes you'd like to make before your wallet ships. Please include your reference number.
+                                        <br><br>
+
+
+					<h5> Is this form secure? </h5>   
+Yes, we use Amazon Payments to process your payment. It relies on the same security protocols used in online banking. Your private information is submitted using HTTPS. It is secure.
+
+				</div>
+			</div>
+
+		</div>
+
+</div>
+		<!-- yield end -->
+
+    </div>
+
+  </div>
+</div>

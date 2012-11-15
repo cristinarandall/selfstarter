@@ -1,0 +1,17 @@
+<div class="gray_background">
+  <ul class="wrapper clearfix" id="other_points">
+
+<% if @products && @products.count > 0 %>
+<% for product in @products %>
+    <li id="section-1">
+<a rel="nofollow" href="/preorder?id=<%= product.id %>">
+      <h3><%= product.name %></h3>
+      <h5>$ <%= product.price %></h5>
+
+      <p><%= product.description %></p>
+</a>
+    </li>
+<% end %>
+<% end %>
+  </ul>
+</div>
