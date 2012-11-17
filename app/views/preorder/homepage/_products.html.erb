@@ -1,10 +1,10 @@
 <div class="gray_background">
-  <ul class="wrapper clearfix" id="other_points">
+  <ul class="wrapper clearfix product-container" id="other_points">
 
 <% if @products && @products.count > 0 %>
 <% for product in @products %>
     <li id="section-1" class="individual-product">
-<a rel="nofollow" href="/preorder?id=<%= product.id %>">
+<a rel="nofollow" href="/checkout?id=<%= product.id %>">
 
 <img src="<%= product.image_url %>" class="product-image" />
       <h3><%= product.name %></h3>
