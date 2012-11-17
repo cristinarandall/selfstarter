@@ -9,8 +9,10 @@
 <img src="<%= product.image_url %>" class="product-image" />
 <span class="shadow"></span>
       <h3><%= product.name %></h3>
-      <h5>$ <%= product.price %></h5>
 
+<% if product.price %>
+      <h5>$ <%= product.price %></h5>
+<% end %>
       <p><%= product.description %></p>
 
 </a>
