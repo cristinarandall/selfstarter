@@ -5,8 +5,8 @@ Selfstarter::Application.routes.draw do
   match '/checkout'               => 'products#index'
   match '/feedback'               => 'contacts#index'
   match '/signin'               => 'users#index'
-  match '/feedback'               => 'contacts#index'
   match '/admin'               => 'admins#index'
+  match '/send_message'               => 'products#send_message'
 
   get 'preorder/checkout'
   match '/preorder/share/:uuid'   => 'preorder#share', :via => :get
