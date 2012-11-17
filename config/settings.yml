@@ -10,14 +10,14 @@ project_goal: 100
 # If you want to edit the FAQ, head over to app/views/preorder/homepage/_faqs.html.erb
 
 # This'll be both the page title (<title></title>) and the name in the header
-product_name: "Selfstarter"
+product_name: "GRiT"
 
 # An image showcasing your product -- it'll show up when you pin your product
 # It should be in app/assets/images
-product_image_path: "my-product-image.png"
+product_image_path: "https://s3.amazonaws.com/selfstarter/photo-full.jpeg"
 
 # The message on the preorder page, Lockitron's 
-value_proposition: "Roll your own crowdfunding"
+value_proposition: "Augmented Reality Earphones"
 
 # YouTube or Vimeo Video URL (The embed URL, without the query string options)
 video_embed_url: "https://www.youtube.com/v/D1L3o88GKew"
@@ -54,15 +54,15 @@ progress_text: "Implemented"
 # Call to action section
 
 # On Lockitron, it's "First Batch Ships in March 2013"
-ships:  				"Ships...sometime"
+ships: "Ships...sometime"
 
 # On Lockitron, it's "Reserve Now"
 call_to_action: "Reserve Now"
 # On Lockitron, this is "Only $149 for a limited time"
-price_human: 		"It costs money!"					
+price_human: "It costs money!"					
 
 # The paragraph below the price. You'd probably say something about how you're not going to charge them before it ships (so it's less risky).
-dont_give_them_a_reason_to_say_no: "You'll get this exact site. All you'll need to get started is a great product."
+dont_give_them_a_reason_to_say_no: "Earphones that emPOWER you to use your portable audio devices in more places, more activities and greater comfort than ever before."
 
 # Social Stuff
 facebook_app_id: "1234567890"
