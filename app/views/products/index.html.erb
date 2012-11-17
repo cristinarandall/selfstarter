@@ -48,31 +48,54 @@
 <% if @products %>
 
 <% if @products[0] %>
+
+<% if @products[0] == params[:id] %>
+<% @count = 1 %>
+<% else %>
+<% @count = 0 %>
+<% end %>
+
+
 <span class="item-row">
-<input id="user_email" name="product_1" class="quantity" name="user[email]" size="30" type="number" min="1" max="50">
+<input id="user_email" value="<%= @count %>" name="product_1" class="quantity" name="user[email]" size="30" type="number" min="1" max="50">
  x $ <span class="price"> <%= @products[0].price %> </span> <a href="javascript:void(0);" class="ordertype-item"><%= @products[0].name %></a><br>
 </span>
 <% end %>
 
 
 <% if @products[1] %>
+
+<% if @products[1] == params[:id] %>
+<% @count = 1 %>
+<% else %>
+<% @count = 0 %>
+<% end %>
+
 <span class="item-row">
-<input id="user_email" name="product_2" class="quantity" size="30" type="number" min="1" max="50">
+<input value="<%= @count %>" id="user_email" name="product_2" class="quantity" size="30" type="number" min="1" max="50">
  x $<span class="price"> <%= @products[1].price %> </span> <a href="javascript:void(0);" class="ordertype-item"> <%= @products[1].name %></a><br>
 </span>
 <% end %>
 
 
 <% if @products[2] %>
+
+
+<% if @products[2] == params[:id] %>
+<% @count = 1 %>
+<% else %>
+<% @count = 0 %>
+<% end %>
+
 <span class="item-row">
-<input id="user_email" name="product_3" class="quantity" size="30" type="number" min="1" max="50">
+<input id="user_email"  value="<%= @count %>" name="product_3" class="quantity" size="30" type="number" min="1" max="50">
 > x $ <span class="price"> <%= @products[2].price %> </span> <a href="javascript:void(0);" class="ordertype-item"> <%= @products[2].name %></a><br>
 </span>
 <% end %>
 
 <% if @products[3] %>
 <span class="item-row">
-<input id="user_email" name="product_4" class="quantity" size="30" type="number" min="1" max="50">
+<input id="user_email" value="<%= @count %>" name="product_4" class="quantity" size="30" type="number" min="1" max="50">
  x $ <span class="price"> <%= @products[3].price %> </span>  <a href="javascript:void(0);" class="ordertype-item">  <%= @products[3].name %> </a><br>
 </span>
 <% end %>
