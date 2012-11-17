@@ -3,7 +3,7 @@
 
 <% if @products && @products.count > 0 %>
 <% for product in @products %>
-    <li id="section-1">
+    <li id="section-1" class="individual-product">
 <a rel="nofollow" href="/preorder?id=<%= product.id %>">
 
 <img src="<%= product.image_url %>" class="product-image" />
