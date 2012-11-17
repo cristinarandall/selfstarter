@@ -48,7 +48,7 @@
 <% if @products[0] %>
 <span class="item-row">
 <input id="user_email" name="product_1" class="quantity" name="user[email]" size="30" type="number" min="1" max="50">
- x $39 <a href="javascript:void(0);" class="ordertype-item"><%= @products[0].name %></a><br>
+ x $ <span class="price"> <%= @products[0].price %> </span> <a href="javascript:void(0);" class="ordertype-item"><%= @products[0].name %></a><br>
 </span>
 <% end %>
 
@@ -56,7 +56,7 @@
 <% if @products[1] %>
 <span class="item-row">
 <input id="user_email" name="product_2" class="quantity" size="30" type="number" min="1" max="50">
- x $49 <a href="javascript:void(0);" class="ordertype-item"> <%= @products[1].name %></a><br>
+ x $<span class="price"> <%= @products[1].price %> </span> <a href="javascript:void(0);" class="ordertype-item"> <%= @products[1].name %></a><br>
 </span>
 <% end %>
 
@@ -64,14 +64,14 @@
 <% if @products[2] %>
 <span class="item-row">
 <input id="user_email" name="product_3" class="quantity" size="30" type="number" min="1" max="50">
-> x $49 <a href="javascript:void(0);" class="ordertype-item"> <%= @products[2].name %></a><br>
+> x $ <span class="price"> <%= @products[2].price %> </span> <a href="javascript:void(0);" class="ordertype-item"> <%= @products[2].name %></a><br>
 </span>
 <% end %>
 
 <% if @products[3] %>
 <span class="item-row">
 <input id="user_email" name="product_4" class="quantity" size="30" type="number" min="1" max="50">
- x $49 <a href="javascript:void(0);" class="ordertype-item">  <%= @products[3].name %> </a><br>
+ x $ <span class="price"> <%= @products[3].price %> </span>  <a href="javascript:void(0);" class="ordertype-item">  <%= @products[3].name %> </a><br>
 </span>
 <% end %>
 
