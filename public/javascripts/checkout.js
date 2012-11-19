@@ -1,3 +1,26 @@
+
+function get_users() {
+
+var company_id = $("#company_id").attr("value");
+$.ajax({
+  url: "admins/get_orders?company_id=" + company_id,
+  type: 'POST',
+  data: "company_id=" + company_id,
+  success: function(selectValues){
+var json_object = JSON.parse(selectValues);
+var count = 0;
+                for (var i = 0; i < json_object.length; i++) {
+
+
+}
+
+}
+
+});
+}
+
+
+
 $(function(){
 
 
