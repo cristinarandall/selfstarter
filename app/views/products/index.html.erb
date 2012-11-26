@@ -4,11 +4,8 @@
 
     <div id="header">
       <ul>
-        <li class="logo"><a href="/"> GRiTworks, Inc.</a></li>
+        <li ><a href="/">  <img src="https://s3.amazonaws.com/selfstarter/GRiT-Logo-Shield-onBlack-final.png" style="width: 175px;margin-top: -20px;" /></a></li>
           <li class="profile">
-<!--
-            <a href="/account/login" class="logout">Sign in</a>
--->
           </li>
       </ul>
       <div style="clear:both"></div>
@@ -33,17 +30,8 @@
 
 <%= form_tag({:controller=> 'preorder', :action => "prefill"}, :id => "order-form", :class=>"fade", :method=>'post') do %>
 
-
-
-					  <div class="clear">
-					    <label for="user_email">Email</label>
-					    <input id="user_email" name="user_email" size="30" type="text">
-					  </div>
-
-
 <div class="form-row">
             
-<label style="margin-top:70px;">Select Your Style</label>
 
 <% if @products %>
 
@@ -112,12 +100,46 @@
 
 <% end %>
 
+<input type="checkbox" name="outside-us" id="outside-us" value="true">
+International Shipping (outside US or Canada)<br/>
+
 <input type="hidden" name="total" value id="total_cost" /> 
 
 
-            <div class="total">
-            $<span id="order-total">0</span>.00 USD Total
+            <div class="total discounts">
+            $<span class="base-discount">0</span> Base Discount
             </div>
+
+            <div class="total discounts">
+            $<span class="volume-discount">0</span> Volume Discount
+            </div>
+
+            <div class="total discounts">
+            <span class="total-discount">0</span> % TOTAL Discount
+            </div>
+
+
+
+            <div style="border-top: 1px solid #6B6B6B;" class="total">
+            $<span id="order-total">0</span>.00 TOTAL (including shipping)
+            </div>
+
+            <div class="total">
+            $<span id="order-total-deposit">0</span>.00 TOTAL - Deposit (due upon order)
+            </div>
+
+            <div class="total">
+            $<span id="order-total-balance">0</span>.00 TOTAL - Balance (due prior to shipping)
+            </div>
+
+
+
+                                          <div class="clear">
+                                            <label for="user_email">Email</label>
+                                            <input id="user_email" name="user_email" size="30" type="text">
+                                          </div>
+
+
           </div>
 
 
@@ -125,14 +147,20 @@
 	
 					<div id="login-button-container">
 						<div id="login-forgot"><a href="/account/forgot"> </a></div>
-						<div id="login-button"><a class="blue_button reserve" name="commit" > Submit Payment</a></div> 
+						<div id="login-button"><a class="buy-trigger reserve" name="commit" > 
+<img src="https://s3.amazonaws.com/selfstarter/CheckoutAmazon.png" />
+</a></div> 
 						<div class="clear"></div>
 					</div>
+
+
+
+
 <% end %>
 				</div>
 			</div>
 
-			<div id="about">
+			<div style="padding-top: 0px;" id="about">
 				<div class="about-inner">
 					<h5> When will I get my Order</h5> 
 We are in the process of making our production tools! The first batch of earphones will ship soon. Submit your payment and we will keep you updated via email.

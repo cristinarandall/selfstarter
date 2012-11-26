@@ -25,8 +25,8 @@ video_embed_url: "https://www.youtube.com/v/D1L3o88GKew"
 # Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
 
 # To find your access key and secret key, head over to here --> http://bit.ly/R4I4ky (Follow that guide in the Seller Central page)
-amazon_access_key: "YOUR_AMAZON_ACCESS_KEY"
-amazon_secret_key: "YOUR_AMAZON_SECRET_KEY"
+amazon_access_key: "AKIAJYWPEQWTBJD437EA"
+amazon_secret_key: "u5TkKFxkqifkouOeiFJanCQOHsabMelLRSwPRGaY"
 price: 	19.95
 
 payment_description: "You really should change this text because people will see it on Amazon's order page!!!!!"
