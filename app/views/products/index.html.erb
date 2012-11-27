@@ -46,7 +46,7 @@
 
 <% for product in @products %>
 <span class="item-row">
-<input id="user_email" value="" name="product[<%= product.id %>]" class="quantity" style="width: 300px;" type="number" min="0" max="50">
+<input id="user_email" value="" name="product[<%= product.id %>]" class="quantity" type="number" min="0" max="50">
  x $ <span class="price"> <%= product.price %> </span> <a href="javascript:void(0);" class="ordertype-item"><%= product.name %></a><br>
 </span>
 <% end %>
@@ -74,16 +74,16 @@ International Shipping (outside US or Canada)<br/>
 
 
             <div style="border-top: 1px solid #6B6B6B;" class="total">
-            $<span id="order-total">0</span>.00 TOTAL (including shipping)
+            $<span id="order-total">0</span> TOTAL (including shipping)
             </div>
 
             <div class="total">
-            $<span id="order-total-deposit">0</span>.00 TOTAL - Deposit (due upon order)
+            $<span id="order-total-deposit">0</span> TOTAL - Deposit (due upon order)
             </div>
 <input type="hidden" id="order-total-deposit-input" value="" name="deposit"/>
 
             <div class="total">
-            $<span id="order-total-balance">0</span>.00 TOTAL - Balance (due prior to shipping)
+            $<span id="order-total-balance">0</span> TOTAL - Balance (due prior to shipping)
             </div>
 
 
@@ -93,7 +93,7 @@ International Shipping (outside US or Canada)<br/>
 
                                           <div class="clear">
                                             <label for="user_email">Email</label>
-                                            <input id="user_email" name="email"  type="text">
+                                            <input id="user_email"  style="width: 300px;" name="email"  type="text">
                                           </div>
 
 
