@@ -170,6 +170,19 @@ calculate_discount();
 
 
 
+$(".ordertype-item").hover(function(){
+
+var image_url = $(this).attr("data-url");
+alert(image_url);
+$("img.preview-image").attr("src", image_url);
+
+});
+
+
+
+
+
+
 
 
 });

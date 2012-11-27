@@ -20,7 +20,12 @@
 		<div id="account">
 
 			<div id="login">
-				
+			
+
+
+<img src class="preview-image">
+
+	
 			<div class="header">
 			<h3> Pre-order</h3>
 			</div>
@@ -48,7 +53,7 @@
 <% for product in @products %>
 <span class="item-row">
 <input id="<%= product.id %>" value="" name="product[<%= product.id %>]" class="quantity" type="number" min="0" max="50">
- x $ <span class="price"> <%= product.price %> </span> <a href="javascript:void(0);" class="ordertype-item"><%= product.name %></a><br>
+ x $ <span class="price"> <%= product.price %> </span> <a data-url="<%= product.image_url %>" class="ordertype-item"><%= product.name %></a><br>
 </span>
 <% end %>
 
