@@ -1788,7 +1788,7 @@ form.edit_input_exp > input{
 	}
 
 	.content td {
-		line-height: 36px;
+		line-height: 30px;
 		border-bottom: 1px solid #eee;
 		color: #333;
 	}
@@ -2574,4 +2574,15 @@ form.edit_input_exp > input{
   color: white;
 }
 
+.summary-table .total{
+width: 80px;
+}
+
+.content .summary-table {
+font-size: 14px;
+}
+
+.content .summary-table td {
+font-size: 14px;
+}
 
