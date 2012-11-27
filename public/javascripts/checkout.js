@@ -33,6 +33,7 @@ total = input_val + total;
 });
 
 var base_discount = total * .15;
+var base_discount=Math.round(base_discount*100)/100;
 $(".base-discount").html(base_discount)
 
 var volume_discount = calculate_volume_discount();
@@ -137,6 +138,14 @@ $(document).ready(function(){
 $(".checkout-amazon").click(function() {
 $("#order-form").submit();
 });
+
+
+
+    $('#outside-us').change(function() {       
+
+calculate_discount();
+
+    });
 
 
 $(".item-row input.quantity").bind("keyup", function(e){
