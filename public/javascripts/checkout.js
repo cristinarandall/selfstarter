@@ -169,6 +169,12 @@ calculate_discount();
 });
 
 
+$('.item-row input.quantity').change(function() {
+
+calculate_discount();
+
+});
+
 
 $(".ordertype-item").hover(function(){
 
