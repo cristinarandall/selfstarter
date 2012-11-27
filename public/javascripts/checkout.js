@@ -58,8 +58,8 @@ var total_final = total - parseInt(total_discount);
 $("#order-total").html(total_final);
 
 
-var deposit = Math.round(total_final*.3*100)/100;
-var balance = Math.round(total_final*.7*100)/100;
+var deposit = Math.round(total_final*.30*1000)/1000;
+var balance = Math.round(total_final*.70*1000)/1000;
 
 
 $("#order-total-deposit").html(deposit);
