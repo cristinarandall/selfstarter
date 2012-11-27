@@ -72,8 +72,6 @@ var input_val = $(this).attr("value") * parseInt($(this).next(".price").html());
 //total = input_val + total;
 var selector_string = "#rebate_" + $(this).attr("id");
 var input_val = Math.round(input_val*.1*100)/100;
-alert(selector_string);
-alert(input_val);
 $(selector_string).html(input_val);
 total_rebate = input_val + total_rebate;
 });
