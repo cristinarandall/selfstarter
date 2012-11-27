@@ -47,7 +47,7 @@ var total_discount = volume_discount + base_discount;
 
 var percentage_tot_discount = (total_discount / total);
 
-var percentage_tot_discount=Math.round(percentage_tot_discount*100)/100;
+var percentage_tot_discount=Math.round(percentage_tot_discount*100*100)/100;
 $(".total-discount").html(percentage_tot_discount);
 
 if (jQuery("#outside-us").is(':checked')) {

@@ -125,6 +125,29 @@ International Shipping (outside US or Canada)<br/>
 <% end %>
 				</div>
 
+<!--
+<h3 style="margin-top:30px;margin-bottom:30px;">
+Kickstarter Rebate
+</h3>
+
+<table>
+<tr><td> $<span id="total-rebate"></span> </td><td> Total Potential Rebate</td><td>  </td></tr>
+
+<% for rebate in @rebates %>
+<tr><td>  </td><td> $<span id="rebate_<%= rebate.id %>"> </span></td>  <td> <%= rebate.name %> </td></tr>
+<% end %>
+
+</table>
+
+<p class="kickstarter"> * Qualifying Kickstarter Rebate will be applied to any pre-order (for matching products) placed during the Kickstarter funding drive. Rebate will be applied once Kickstarter pledge drive is successfully completed and we recieve confirmation of matching Pledge. Note that customer information must be the same for both Kickstarter and Pre-Ordering
+</p>
+-->
+
+			</div>
+
+			<div style="padding-top: 0px;" id="about">
+				<div class="about-inner">
+
 
 <h3 style="margin-top:30px;margin-bottom:30px;">
 Kickstarter Rebate
@@ -137,23 +160,17 @@ Kickstarter Rebate
 <tr><td>  </td><td> $<span id="rebate_<%= rebate.id %>"> </span></td>  <td> <%= rebate.name %> </td></tr>
 <% end %>
 
-<!--
-<tr><td>  </td><td> $00</td> <td> GeM-1 Balanced </td></tr>
-<tr><td>  </td><td> $00</td> <td> NeK Wired </td></tr>
-<tr><td>  </td><td> $00</td> <td> NeK Bluetooth</td></tr>
--->
-
 </table>
 
 <p class="kickstarter"> * Qualifying Kickstarter Rebate will be applied to any pre-order (for matching products) placed during the Kickstarter funding drive. Rebate will be applied once Kickstarter pledge drive is successfully completed and we recieve confirmation of matching Pledge. Note that customer information must be the same for both Kickstarter and Pre-Ordering
 </p>
 
 
-			</div>
 
-			<div style="padding-top: 0px;" id="about">
-				<div class="about-inner">
-					<h5> When will I get my Order</h5> 
+
+
+
+					<h5 style="margin-top:30px;"> When will I get my Order</h5> 
 We are in the process of making our production tools! The first batch of earphones will ship soon. Submit your payment and we will keep you updated via email.
 					<br><br>
 
