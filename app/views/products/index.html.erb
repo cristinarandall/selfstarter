@@ -34,7 +34,8 @@
  
 
 <% @ids = @products %>
-           
+<% @rebates = @products %>          
+ 
 
 <% for product_id in @ids %>
 
@@ -46,7 +47,7 @@
 
 <% for product in @products %>
 <span class="item-row">
-<input id="user_email" value="" name="product[<%= product.id %>]" class="quantity" type="number" min="0" max="50">
+<input id="<%= product.id %>" value="" name="product[<%= product.id %>]" class="quantity" type="number" min="0" max="50">
  x $ <span class="price"> <%= product.price %> </span> <a href="javascript:void(0);" class="ordertype-item"><%= product.name %></a><br>
 </span>
 <% end %>
@@ -122,11 +123,17 @@ Kickstarter Rebate
 </h3>
 
 <table>
-<tr><td> $00 </td><td> Total Potential Rebate</td><td>  </td></tr>
-<tr><td>  </td><td> $00</td>  <td> GeM-1 Dynamic </td></tr>
+<tr><td> $<span id="total-rebate"></span> </td><td> Total Potential Rebate</td><td>  </td></tr>
+
+<% for rebate in @rebates %>
+<tr><td>  </td><td> $<span id="rebate_<%= rebate.id %>"> </span></td>  <td> <%= rebate.name %> </td></tr>
+<% end %>
+
+<!--
 <tr><td>  </td><td> $00</td> <td> GeM-1 Balanced </td></tr>
 <tr><td>  </td><td> $00</td> <td> NeK Wired </td></tr>
 <tr><td>  </td><td> $00</td> <td> NeK Bluetooth</td></tr>
+-->
 
 </table>
 
