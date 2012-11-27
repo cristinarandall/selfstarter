@@ -28,7 +28,7 @@ function calculate_discount() {
 
 var total = 0;
 $(".item-row .quantity").each(function() {
-var input_val = $(this).attr("value");
+var input_val = $(this).attr("value") * parseInt($(this).next(".price").html());
 total = input_val + total;
 });
 

@@ -43,7 +43,11 @@ while (@count < params[:products].size)
 
 end
 
- 
+
+@order.balance = params[:balance]
+@order.deposit = params[:deposit]
+@order.save
+
     # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
     # Then, if they confirm the payment, Amazon POSTs us their shipping details and phone number
     # From there, we save it, and voila, we got ourselves a preorder!
