@@ -56,7 +56,7 @@
 <% for product in @products %>
 <span class="item-row">
 <input id="<%= product.id %>" value="" name="product[<%= product.id %>]" class="quantity" type="number" min="0" max="50">
- x $ <span class="price"> <%= product.price %> </span> <a data-url="<%= product.image_url %>" class="ordertype-item"><%= product.name %></a><br>
+ x $ <span class="price" id="<%= product.price %>" > <%= product.price %> </span> <a data-url="<%= product.image_url %>" class="ordertype-item"><%= product.name %></a><br>
 </span>
 <% end %>
 
