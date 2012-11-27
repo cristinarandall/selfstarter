@@ -61,6 +61,8 @@ $("#order-total").html(total_final);
 var deposit = Math.round(total_final*.30*1000)/1000;
 var balance = Math.round(total_final*.70*1000)/1000;
 
+deposit = deposit.toFixed(2);
+balance = balance.toFixed(2);
 
 $("#order-total-deposit").html(deposit);
 $("#order-total-deposit-input").html(deposit);
