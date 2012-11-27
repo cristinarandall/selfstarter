@@ -53,8 +53,17 @@ var total_final = total - parseInt(total_discount) + 30;
 var total_final = total - parseInt(total_discount);
 }
 $("#order-total").html(total_final);
-$("#order-total-deposit").html(total_final*.30);
-$("#order-total-balance").html(total_final*.70);
+
+
+var deposit = Math.round(total_final*.3*100)/100;
+var balance = Math.round(total_final*.7*100)/100;
+
+
+$("#order-total-deposit").html(deposit);
+$("#order-total-deposit-input").html(deposit);
+
+$("#order-total-balance").html(balance);
+$("#order-total-balance-input").html(balance);
 }
 
 function populate_order_stats() {
@@ -122,27 +131,22 @@ var count = 0;
 
 $(document).ready(function(){
 
-//$(".item-row input.quantity").change(function() {
 
 
 
-var total = 0;
+$(".checkout-amazon").click(function() {
+$("#order-form").submit();
+});
+
+
 $(".item-row input.quantity").bind("keyup", function(e){
-
-
-//var quantity_value = $(this).attr("value");
-//total = total + parseInt(quantity_value) * parseFloat($(this).next(".price").html());
-
-
 
 calculate_discount();
 
 });
 
-//$("#order-total").html(total)
 
 
-//});
 
 
 });

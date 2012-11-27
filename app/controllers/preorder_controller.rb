@@ -16,33 +16,40 @@ class PreorderController < ApplicationController
   def prefill
     @user  = User.find_or_create_by_email!(params[:email])
 
-   if param[:id]
-   @product = Product.find(params[:id])
-   end
+    if @user
+    @user  = User.create(:email=>params[:email])
+    end
 
-   if @product   
-    @order = Order.prefill!(:name => @product.name, :price => @product.price)
+   #if param[:id]
+   #@product = Product.find(params[:id])
+   #end
+
+   if @user   
+    @order = Order.prefill!(:user_id => @user.id, :name=>params[:email], :price=>100)
    end    
 
 
+puts "size"
+@count = 0
+while (@count < params[:products].size)
 
-   @item1 = Item.create(:quantity=> params[:product_1], :product_1=>params[:product_id_1]) 
-   @item2 = Item.create(:quantity=> params[:product_1], :product_1=>params[:product_id_1])
-   @item3 = Item.create(:quantity=> params[:product_1], :product_1=>params[:product_id_1])
-   @item4 = Item.create(:quantity=> params[:product_1], :product_1=>params[:product_id_1])
+@id = params[:products][@count]
+@quantity = params[:product][@id]
+@item = Item.create(:quantity=> @quantity, :product_id=>@id)
+@item.order_id = @order.id
+@item.save
 
-   
+@count = @count + 1
 
-
-
+end
 
  
-    #@order = Order.prefill!(:name => Settings.product_name, :price => Settings.price, :user_id => @user.id)
-
     # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
     # Then, if they confirm the payment, Amazon POSTs us their shipping details and phone number
     # From there, we save it, and voila, we got ourselves a preorder!
-    @pipeline = AmazonFlexPay.multi_use_pipeline(@order.uuid, :transaction_amount => Settings.price, :global_amount_limit => Settings.charge_limit, :collect_shipping_address => "True", :payment_reason => Settings.payment_description)
+
+
+    @pipeline = AmazonFlexPay.multi_use_pipeline(@order.uuid, :transaction_amount => params[:deposit], :global_amount_limit => Settings.charge_limit, :collect_shipping_address => "True", :payment_reason => Settings.payment_description)
     redirect_to @pipeline.url("#{request.scheme}://#{request.host}/preorder/postfill")
   end
 

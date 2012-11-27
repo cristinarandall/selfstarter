@@ -31,70 +31,23 @@
 <%= form_tag({:controller=> 'preorder', :action => "prefill"}, :id => "order-form", :class=>"fade", :method=>'post') do %>
 
 <div class="form-row">
-            
+ 
+
+<% @ids = @products %>
+           
+
+<% for product_id in @ids %>
+
+<input type="hidden" value="<%= product_id.id %>" name="products[]" />
+
+<% end %> 
 
 <% if @products %>
 
-<% if @products[0] %>
-
-<% if @products[0].id == params[:id] %>
-<% @count = 1 %>
-<% else %>
-<% @count = 0 %>
-<% end %>
-
-
+<% for product in @products %>
 <span class="item-row">
-<input id="user_email" value="<%= @count %>" name="product_1" class="quantity" name="user[email]" size="30" type="number" min="1" max="50">
- x $ <span class="price"> <%= @products[0].price %> </span> <a href="javascript:void(0);" class="ordertype-item"><%= @products[0].name %></a><br>
-</span>
-<% end %>
-
-
-<% if @products[1] %>
-
-<% if @products[1].id == params[:id] %>
-<% @count = 1 %>
-<% else %>
-<% @count = 0 %>
-<% end %>
-
-<span class="item-row">
-<input value="<%= @count %>" id="user_email" name="product_2" class="quantity" size="30" type="number" min="1" max="50">
- x $<span class="price"> <%= @products[1].price %> </span> <a href="javascript:void(0);" class="ordertype-item"> <%= @products[1].name %></a><br>
-</span>
-<% end %>
-
-
-<% if @products[2] %>
-
-
-<% if @products[2].id == params[:id] %>
-<% @count = 1 %>
-<% else %>
-<% @count = 0 %>
-<% end %>
-
-<span class="item-row">
-<input id="user_email"  value="<%= @count %>" name="product_3" class="quantity" size="30" type="number" min="1" max="50">
-> x $ <span class="price"> <%= @products[2].price %> </span> <a href="javascript:void(0);" class="ordertype-item"> <%= @products[2].name %></a><br>
-</span>
-<% end %>
-
-<% if @products[3] %>
-
-
-<% if @products[3].id == params[:id] %>
-<% @count = 1 %>
-<% else %>
-<% @count = 0 %>
-<% end %>
-
-
-
-<span class="item-row">
-<input id="user_email" value="<%= @count %>" name="product_4" class="quantity" size="30" type="number" min="1" max="50">
- x $ <span class="price"> <%= @products[3].price %> </span>  <a href="javascript:void(0);" class="ordertype-item">  <%= @products[3].name %> </a><br>
+<input id="user_email" value="" name="product[<%= product.id %>]" class="quantity" size="30" type="number" min="1" max="50">
+ x $ <span class="price"> <%= product.price %> </span> <a href="javascript:void(0);" class="ordertype-item"><%= product.name %></a><br>
 </span>
 <% end %>
 
@@ -127,16 +80,20 @@ International Shipping (outside US or Canada)<br/>
             <div class="total">
             $<span id="order-total-deposit">0</span>.00 TOTAL - Deposit (due upon order)
             </div>
+<input type="hidden" id="order-total-deposit-input" value="" name="deposit"/>
 
             <div class="total">
             $<span id="order-total-balance">0</span>.00 TOTAL - Balance (due prior to shipping)
             </div>
 
 
+<input type="hidden" id="order-total-balance" value="" name="balance" />
+
+
 
                                           <div class="clear">
                                             <label for="user_email">Email</label>
-                                            <input id="user_email" name="user_email" size="30" type="text">
+                                            <input id="user_email" name="email"  type="text">
                                           </div>
 
 
@@ -147,7 +104,7 @@ International Shipping (outside US or Canada)<br/>
 	
 					<div id="login-button-container">
 						<div id="login-forgot"><a href="/account/forgot"> </a></div>
-						<div id="login-button"><a class="buy-trigger reserve" name="commit" > 
+						<div id="login-button" class="checkout-amazon"><a class="buy-trigger reserve" name="commit" > 
 <img src="https://s3.amazonaws.com/selfstarter/CheckoutAmazon.png" />
 </a></div> 
 						<div class="clear"></div>
@@ -158,6 +115,25 @@ International Shipping (outside US or Canada)<br/>
 
 <% end %>
 				</div>
+
+
+<h3 style="margin-top:30px;margin-bottom:30px;">
+Kickstarter Rebate
+</h3>
+
+<table>
+<tr><td> $00 </td><td> Total Potential Rebate</td><td>  </td></tr>
+<tr><td>  </td><td> $00</td>  <td> GeM-1 Dynamic </td></tr>
+<tr><td>  </td><td> $00</td> <td> GeM-1 Balanced </td></tr>
+<tr><td>  </td><td> $00</td> <td> NeK Wired </td></tr>
+<tr><td>  </td><td> $00</td> <td> NeK Bluetooth</td></tr>
+
+</table>
+
+<p class="kickstarter"> * Qualifying Kickstarter Rebate will be applied to any pre-order (for matching products) placed during the Kickstarter funding drive. Rebate will be applied once Kickstarter pledge drive is successfully completed and we recieve confirmation of matching Pledge. Note that customer information must be the same for both Kickstarter and Pre-Ordering
+</p>
+
+
 			</div>
 
 			<div style="padding-top: 0px;" id="about">
@@ -176,7 +152,11 @@ Yes, we use Amazon Payments to process your payment. It relies on the same secur
 
 				</div>
 
-<img style="width: 100px; margin-top: 20px;" src="https://s3.amazonaws.com/selfstarter/AmazonPayments.png" class="amazon-payments"/>
+<img style="width: 60px; margin-top: 20px;" src="https://s3.amazonaws.com/selfstarter/AmazonPayments.png" class="amazon-payments"/>
+
+
+
+
 
 	</div>
 
