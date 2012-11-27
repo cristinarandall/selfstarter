@@ -1,4 +1,6 @@
-
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
 
 function calculate_volume_discount() {
 
@@ -170,6 +172,7 @@ calculate_discount();
 
 
 $('.item-row input.quantity').change(function() {
+
 
 calculate_discount();
 
