@@ -37,7 +37,7 @@ alert("30")
 return 30;
 
 } else if (total > 500){
-var amount = total / (30*500);
+var amount = (total / 500) * 30;
 
 alert(amount)
 $(".total-shipping").html(amount);
