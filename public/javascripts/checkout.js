@@ -163,17 +163,18 @@ $(".stats-summary.bottom-right").append("<li><strong class='stats-count'>" + jso
 
 
 
-function get_users() {
+function populate_order_stats() {
 
-var company_id = $("#company_id").attr("value");
 $.ajax({
-  url: "admins/get_orders?company_id=" + company_id,
+  url: "/get_orders",
   type: 'POST',
-  data: "company_id=" + company_id,
+  data: "data",
   success: function(selectValues){
 var json_object = JSON.parse(selectValues);
 var count = 0;
                 for (var i = 0; i < json_object.length; i++) {
+
+$(".order-data").append("<tr><td>"+ json_object[i].name +"</td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].revenue +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone_number + "</tr>");
 
 
 }

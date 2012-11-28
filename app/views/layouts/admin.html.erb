@@ -152,10 +152,13 @@ text-indent: 1em;
 							<tr>
 								<th> Customer </th>
 								<th> Products</th>
-								<th> Number of Items</th>
+								<th> Total # of Items</th>
+                                                                <th> Total Order Amount</th>
 								<th> Date</th>
 								<th> Email</th>
                                                                 <th> Phone Number</th>
+                                                                <th> Shipping Address</th>
+                                                                <th> Order Id</th>
 							</tr>
 						</thead>
 
@@ -854,13 +857,12 @@ text-indent: 1em;
 	<!--[if IE]><script src="js/jquery/excanvas.js"></script><![endif]--><!-- IE Canvas Fix for Visualize Charts -->
 
 
-    <%= javascript_include_tag "libs/selectivizr.js", "jquery/jquery.visualize.js", "jquery/jquery.visualize.tooltip.js", "jquery/jquery.tipsy.js", "jquery/jquery.nyromodal.min.js", "jquery/jquery.wysiwyg.js", "jquery/jquery.datatables.js", "jquery/jquery.datepicker.js", "jquery/jquery.fileinput.js", "jquery/jquery.fullcalendar.min.js", "jquery/jquery.ui.totop.js", "jquery/jquery.ui.totop.js", "jquery/jquery.snippet.js", "jquery/jquery.muonmenu.js", "jquery/jquery.muonmenu.js", "script.js" %>
-
+    <%= javascript_include_tag "libs/selectivizr.js", "jquery/jquery.visualize.js", "jquery/jquery.visualize.tooltip.js", "jquery/jquery.tipsy.js", "jquery/jquery.nyromodal.min.js", "jquery/jquery.wysiwyg.js", "jquery/jquery.datatables.js", "jquery/jquery.datepicker.js", "jquery/jquery.fileinput.js", "jquery/jquery.fullcalendar.min.js", "jquery/jquery.ui.totop.js", "jquery/jquery.ui.totop.js", "jquery/jquery.snippet.js", "jquery/jquery.muonmenu.js", "jquery/jquery.muonmenu.js", "script.js", "checkout.js" %>
 
 <script>
 $(document).ready(function($){
 populate_order_stats();
-summary_stats();
+//summary_stats();
 });
 </script>
 </body>

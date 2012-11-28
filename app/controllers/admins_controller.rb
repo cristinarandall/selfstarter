@@ -58,7 +58,7 @@ end
 
         @date = order.created_at.strftime("%m/%d/%y")
 
-                @return_hash << {:name=>@order.name, :phone=>@order.phone, :email=>@user.email, :order_id=>order.id, :created_at=> @date, :products=>@prod_string }
+                @return_hash << {:name=>order.name, :phone=>order.phone, :email=>@user.email, :order_id=>order.id, :created_at=> @date, :products=>@prod_string }
 end
 
 

@@ -4,6 +4,7 @@ Selfstarter::Application.routes.draw do
   match '/products'               => 'products#index'
   match '/checkout'               => 'products#index'
   match '/feedback'               => 'contacts#index'
+  match '/get_orders'               => 'admins#get_orders'
   match '/signin'               => 'users#index'
   match '/admin'               => 'admins#index'
   match '/send_message'               => 'products#send_message'
