@@ -78,7 +78,6 @@ $(".base-discount").html(addCommas(base_discount.toFixed(2)))
 
 var volume_discount = calculate_volume_discount();
 var volume_discount = volume_discount * total;
-var volume_discount=Math.round(volume_discount*100)/100;
 $(".volume-discount").html(addCommas(volume_discount));
 
 var total_discount = volume_discount + base_discount;
@@ -86,8 +85,7 @@ var total_discount = volume_discount + base_discount;
 var percentage_tot_discount = (total_discount / total);
 
 var percentage_tot_discount=Math.round(percentage_tot_discount*100*100)/100;
-$(".total-discount").html(addCommas(percentage_tot_discount));
-
+$(".total-discount").html(addCommas(percentage_tot_discount.toFixed(2)));
 if (jQuery("#outside-us").is(':checked')) {
 var total_final = total - parseFloat(total_discount) + shipping_cost(total);
 } else {
