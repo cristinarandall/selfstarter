@@ -1,3 +1,18 @@
+
+function addCommas(nStr)
+{
+	nStr += '';
+	x = nStr.split('.');
+	x1 = x[0];
+	x2 = x.length > 1 ? '.' + x[1] : '';
+	var rgx = /(\d+)(\d{3})/;
+	while (rgx.test(x1)) {
+		x1 = x1.replace(rgx, '$1' + ',' + '$2');
+	}
+	return x1 + x2;
+}
+
+
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
@@ -54,31 +69,31 @@ var input_val = $(this).attr("value") * parseFloat($(this).next(".price").html()
 total = input_val + total;
 });
 
-$(".subtotal").html(total);
+$(".subtotal").html(addCommas(total));
 
 
 var base_discount = total * .15;
 var base_discount=Math.round(base_discount*100)/100;
-$(".base-discount").html(base_discount)
+$(".base-discount").html(addCommas(base_discount.toFixed(2)))
 
 var volume_discount = calculate_volume_discount();
 var volume_discount = volume_discount * total;
 var volume_discount=Math.round(volume_discount*100)/100;
-$(".volume-discount").html(volume_discount);
+$(".volume-discount").html(addCommas(volume_discount));
 
 var total_discount = volume_discount + base_discount;
 
 var percentage_tot_discount = (total_discount / total);
 
 var percentage_tot_discount=Math.round(percentage_tot_discount*100*100)/100;
-$(".total-discount").html(percentage_tot_discount);
+$(".total-discount").html(addCommas(percentage_tot_discount));
 
 if (jQuery("#outside-us").is(':checked')) {
 var total_final = total - parseFloat(total_discount) + shipping_cost(total);
 } else {
 var total_final = total - parseFloat(total_discount);
 }
-$("#order-total").html(total_final);
+$("#order-total").html(addCommas(total_final));
 
 
 var deposit = Math.round(total_final*.30*1000)/1000;
@@ -87,10 +102,10 @@ var balance = Math.round(total_final*.70*1000)/1000;
 deposit = deposit.toFixed(2);
 balance = balance.toFixed(2);
 
-$("#order-total-deposit").html(deposit);
+$("#order-total-deposit").html(addCommas(deposit));
 $("#order-total-deposit-input").html(deposit);
 
-$("#order-total-balance").html(balance);
+$("#order-total-balance").html(addCommas(balance));
 $("#order-total-balance-input").html(balance);
 
 var total_rebate = 0;
