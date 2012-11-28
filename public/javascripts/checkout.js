@@ -111,7 +111,8 @@ var input_val = $(this).attr("value") * parseFloat($(this).next(".price").html()
 //total = input_val + total;
 var selector_string = "#rebate_" + $(this).attr("id");
 var input_val = Math.round(input_val*.1*100)/100;
-$(selector_string).html(input_val);
+
+$(selector_string).html(input_val.toFixed(2));
 total_rebate = input_val + total_rebate;
 });
 
