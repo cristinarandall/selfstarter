@@ -30,7 +30,7 @@ return result;
 
 function shipping_cost(total) {
 
-
+total = parseInt(total);
 if (total < 500){
 $(".total-shipping").html("30");
 alert("30")
