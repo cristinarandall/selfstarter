@@ -33,11 +33,13 @@ function shipping_cost(total) {
 
 if (total < 500){
 $(".total-shipping").html("30");
+alert("30")
 return 30;
+
 } else if (total < 500){
 var amount = total / (30*500);
 
-
+alert(amount)
 $(".total-shipping").html(amount);
 
 return amount;
