@@ -116,7 +116,7 @@ $(selector_string).html(input_val);
 total_rebate = input_val + total_rebate;
 });
 
-$("#total-rebate").html(total_rebate);
+$("#total-rebate").html(total_rebate.toFixed(2));
 
 
 }
