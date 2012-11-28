@@ -31,7 +31,7 @@ return .23;
 return 0;
 } else {
 
-var top = (.23 - .05) / (total - 199);
+var top = (.23 - .05) * (total - 199);
 var result = (top / (24000 - 199)) + .05;
 return result;
 
