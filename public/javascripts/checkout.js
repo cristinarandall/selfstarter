@@ -133,8 +133,7 @@ var json_object = JSON.parse(selectValues);
 var count = 0;
                 for (var i = 0; i < json_object.length; i++) {
 
-$(".order-data").append("<tr><td>"+ json_object[i].name +"</td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].revenue +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone_number + "</tr>");
-
+$(".order-data").append("<tr><td>"+ json_object[i].name +"</td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].revenue +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone + "</tr>");
 }
 
 $('.datatable').dataTable({ 'sPaginationType':'full_numbers' });
@@ -174,8 +173,7 @@ var json_object = JSON.parse(selectValues);
 var count = 0;
                 for (var i = 0; i < json_object.length; i++) {
 
-$(".order-data").append("<tr><td>"+ json_object[i].name +"</td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].revenue +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone_number + "</tr>");
-
+$(".order-data").append("<tr><td>"+ json_object[i].name +"</td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].total +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone + "</td><td>" + json_object[i].address + "</td> <td>" + json_object[i].status + "</td> </tr>");
 
 }
 

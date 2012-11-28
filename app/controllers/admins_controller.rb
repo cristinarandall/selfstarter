@@ -51,14 +51,20 @@ for order in @orders
 
 @items = Item.find_all_by_order_id(order.id)
 
+@global_quantity = 0
+
 for item in @items
 @prod = Product.find(item.product_id)
+@global_quantity = item.quantity.to_i + @global_quantity
 @prod_string = @prod_string + "/"+ @prod.name
 end
 
+
+@address_string = order.address_two + "," + order.city + "," + order.state + "," + order.zip + "," + order.country 
         @date = order.created_at.strftime("%m/%d/%y")
 
-                @return_hash << {:name=>order.name, :phone=>order.phone, :email=>@user.email, :order_id=>order.id, :created_at=> @date, :products=>@prod_string }
+                @return_hash << {:order_id=>order.uuid, :status=>order.status, :name=>order.name, :phone=>order.phone, :num_items=>@global_quantity, :total=>order.total, :email=>@user.email, :order_id=>order.id, :created_at=> @date, :products=>@prod_string, :address=>@address_string }
+
 end
 
 
