@@ -78,8 +78,7 @@ $(".base-discount").html(addCommas(base_discount.toFixed(2)))
 
 var volume_discount = calculate_volume_discount();
 var volume_discount = volume_discount * total;
-$(".volume-discount").html(addCommas(volume_discount));
-
+$(".volume-discount").html(addCommas(volume_discount.toFixed(2)));
 var total_discount = volume_discount + base_discount;
 
 var percentage_tot_discount = (total_discount / total);
