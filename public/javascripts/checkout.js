@@ -36,7 +36,7 @@ $(".total-shipping").html("30");
 alert("30")
 return 30;
 
-} else if (total < 500){
+} else if (total > 500){
 var amount = total / (30*500);
 
 alert(amount)
@@ -54,6 +54,9 @@ $(".item-row .quantity").each(function() {
 var input_val = $(this).attr("value") * parseInt($(this).next(".price").html());
 total = input_val + total;
 });
+
+$(".subtotal").html(total);
+
 
 var base_discount = total * .15;
 var base_discount=Math.round(base_discount*100)/100;
