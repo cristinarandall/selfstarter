@@ -93,7 +93,7 @@ var total_final = total - parseFloat(total_discount) + shipping_cost(total);
 } else {
 var total_final = total - parseFloat(total_discount);
 }
-$("#order-total").html(addCommas(total_final));
+$("#order-total").html(addCommas(total_final.toFixed(2)));
 
 
 var deposit = Math.round(total_final*.30*1000)/1000;
