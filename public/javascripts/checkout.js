@@ -26,6 +26,20 @@ return result;
 
 
 }
+
+
+function shipping_cost(total) {
+
+
+if (total < 500){
+return 30;
+} else if (total < 500){
+var amount = total / (30*500);
+return amount;
+}
+
+}
+
 function calculate_discount() {
 
 var total = 0;
@@ -51,7 +65,7 @@ var percentage_tot_discount=Math.round(percentage_tot_discount*100*100)/100;
 $(".total-discount").html(percentage_tot_discount);
 
 if (jQuery("#outside-us").is(':checked')) {
-var total_final = total - parseInt(total_discount) + 30;
+var total_final = total - parseInt(total_discount) + shipping_cost(total);
 } else {
 var total_final = total - parseInt(total_discount);
 }
