@@ -6,7 +6,7 @@ function calculate_volume_discount() {
 
 var total = 0;
 $(".item-row .quantity").each(function() {
-var input_val = $(this).attr("value") * parseInt($(this).next(".price").html());
+var input_val = $(this).attr("value") * parseFloat($(this).next(".price").html());
 total = input_val + total;
 });
 
@@ -30,16 +30,14 @@ return result;
 
 function shipping_cost(total) {
 
-total = parseInt(total);
+total = parseFloat(total);
 if (total < 500){
 $(".total-shipping").html("30");
-alert("30")
 return 30;
 
 } else if (total > 500){
 var amount = (total / 500) * 30;
 
-alert(amount)
 $(".total-shipping").html(amount);
 
 return amount;
@@ -51,7 +49,8 @@ function calculate_discount() {
 
 var total = 0;
 $(".item-row .quantity").each(function() {
-var input_val = $(this).attr("value") * parseInt($(this).next(".price").html());
+var input_val = $(this).attr("value") * parseFloat($(this).next(".price").html());
+
 total = input_val + total;
 });
 
@@ -75,9 +74,9 @@ var percentage_tot_discount=Math.round(percentage_tot_discount*100*100)/100;
 $(".total-discount").html(percentage_tot_discount);
 
 if (jQuery("#outside-us").is(':checked')) {
-var total_final = total - parseInt(total_discount) + shipping_cost(total);
+var total_final = total - parseFloat(total_discount) + shipping_cost(total);
 } else {
-var total_final = total - parseInt(total_discount);
+var total_final = total - parseFloat(total_discount);
 }
 $("#order-total").html(total_final);
 
@@ -96,7 +95,7 @@ $("#order-total-balance-input").html(balance);
 
 var total_rebate = 0;
 $(".item-row .quantity").each(function() {
-var input_val = $(this).attr("value") * parseInt($(this).next(".price").html());
+var input_val = $(this).attr("value") * parseFloat($(this).next(".price").html());
 //total = input_val + total;
 var selector_string = "#rebate_" + $(this).attr("id");
 var input_val = Math.round(input_val*.1*100)/100;
