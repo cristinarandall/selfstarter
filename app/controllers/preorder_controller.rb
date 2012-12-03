@@ -17,7 +17,7 @@ class PreorderController < ApplicationController
     @user  = User.find_or_create_by_email!(params[:email])
 
     if @user
-    @user  = User.create(:email=>params[:email])
+    @user  = User.create(:email=>params[:email], :name=>params[:name])
     end
 
    #if param[:id]
