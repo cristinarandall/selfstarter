@@ -100,10 +100,11 @@ deposit = deposit.toFixed(2);
 balance = balance.toFixed(2);
 
 $("#order-total-deposit").html(addCommas(deposit));
-$("#order-total-deposit-input").html(deposit);
+
+$("#order-total-deposit-input").attr("value",deposit);
 
 $("#order-total-balance").html(addCommas(balance));
-$("#order-total-balance-input").html(balance);
+$("#order-total-balance-input").attr("value", balance);
 
 var total_rebate = 0;
 $(".item-row .quantity").each(function() {
