@@ -9,6 +9,11 @@ def products_in_order
 
 @items = Item.find_all_by_order_id(params[:id])
 
+for item in @items
+	@prod = Product.find(item.product_id)
+                @return_hash << { :name=>@prod.name, :quantity=>item.quantity}
+end
+
 respond_to do |format|
      format.js { render :json=>@return_hash.to_json }
 end
