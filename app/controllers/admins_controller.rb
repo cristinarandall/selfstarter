@@ -5,6 +5,7 @@ class AdminsController < ApplicationController
 
 def products_in_order
 
+@return_hash = []
 
 
 @items = Item.find_all_by_order_id(params[:id])
@@ -80,7 +81,7 @@ elsif @order.city && @order.state
 @address_string = @order.city + "," + @order.state
 end
 
-                @return_hash << { :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
+                @return_hash << { :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
 
 respond_to do |format|
      format.js { render :json=>@return_hash.to_json }

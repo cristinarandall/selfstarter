@@ -141,6 +141,9 @@ $.ajax({
   success: function(selectValues){
 var json_object = JSON.parse(selectValues);
 var count = 0;
+
+
+$("#products-table").append(
                 for (var i = 0; i < json_object.length; i++) {
 
 var html_string = "<tr><td> " + json_object[i].name + " </td><td>" + json_object[i].quantity  + " </td></tr>";
@@ -161,7 +164,7 @@ $.ajax({
 var json_object = JSON.parse(selectValues);
 var count = 0;
                 for (var i = 0; i < json_object.length; i++) {
-var html_string = "<tr><td> Name </td><td>" + json_object[i].name  + " </td></tr><tr><td> Email </td><td>" + json_object[i].email  + " </td></tr> <tr><td> Address </td><td>" + json_object[i].address  + " </td></tr><tr><td> Order Total </td><td>" + json_object[i].total  + " </td></tr> <tr><td> Deposit </td><td>" + json_object[i].deposit  + " </td></tr><tr><td> Balance </td><td>" + json_object[i].balance  + " </td></tr>";
+var html_string = "<tr><td> Name </td><td>" + json_object[i].name  + " </td></tr><tr><td> Email </td><td>" + json_object[i].email  + " </td></tr> <tr><td> Address </td><td>" + json_object[i].address  + " </td></tr><tr><td> Order Total </td><td>" + json_object[i].total  + " </td></tr> <tr><td> Deposit </td><td>" + json_object[i].deposit  + " </td></tr><tr><td> Balance </td><td>" + json_object[i].balance  + " </td></tr><tr><td> Deposit </td><td>" + json_object[i].deposit  + " </td></tr><tr><td> Status </td><td>" + json_object[i].status  + " </td></tr>";
 $("#profile-table").html(html_string);
 }
 
@@ -220,7 +223,7 @@ var order_id = $(this).attr("id");
 
 
 single_order(order_id);
-
+products_in_order(order_id);
 
 $(".order-profile").modal("show");
 
