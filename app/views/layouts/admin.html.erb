@@ -19,8 +19,7 @@
 	
 
 
-<%= stylesheet_link_tag "screen.css", "colors.css", "jquery.muon.css", "jquery.tipsy.css", "jquery.wysiwyg.css", "jquery.datatables.css", "jquery.nyromodal.css", "jquery.datepicker.css", "jquery.fileinput.css", "jquery.fullcalendar.css", "jquery.visualize.css", "jquery.snippet.css" %>	
-	
+<%= stylesheet_link_tag "screen.css", "colors.css", "jquery.muon.css", "jquery.tipsy.css", "jquery.wysiwyg.css", "jquery.datatables.css", "jquery.nyromodal.css", "jquery.datepicker.css", "jquery.fileinput.css", "jquery.fullcalendar.css", "jquery.visualize.css", "jquery.snippet.css", "bootstrap.min.css" %>		
 	<!-- Google WebFonts -->
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Open+Sans:400,400italic,700,700italic&amp;v2' rel='stylesheet' type='text/css'>
 	
@@ -35,6 +34,11 @@ background: none;
 text-indent: 1em;
 }
 
+.modal.order-profile
+{
+min-height:700px;
+
+}
 </style>
 	
 </head>
@@ -594,7 +598,7 @@ text-indent: 1em;
 		<div class="clearfix"></div> <!-- We're really sorry for this, but because of IE7 we still need separated div with clearfix -->
 		
 		<!-- Half width content box -->
-		<article class="content-box col-2">
+		<article style="display:none;" class="content-box col-2">
 			<header>
 				<h2> Order Stats</h2>
 			
@@ -736,7 +740,7 @@ text-indent: 1em;
 		<!-- /Half width content box -->
 		
 		<!-- Half width content box with margin clearing class -->
-		<article class="content-box col-2 clear-rm">
+		<article style="display:none;" class="content-box col-2 clear-rm">
 			<header>
 				<h2> Order Summary</h2>
 				 
@@ -851,13 +855,22 @@ text-indent: 1em;
 	</div>
 	<!-- /Sample Modal Window -->
 
-	<!-- JavaScript at the bottom for faster page loading -->
+	<!-- JavaScript at the bottom for faster page loading 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+
+
+-->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
 	<!--[if IE]><script src="js/jquery/excanvas.js"></script><![endif]--><!-- IE Canvas Fix for Visualize Charts -->
 
 
-    <%= javascript_include_tag "libs/selectivizr.js", "jquery/jquery.visualize.js", "jquery/jquery.visualize.tooltip.js", "jquery/jquery.tipsy.js", "jquery/jquery.nyromodal.min.js", "jquery/jquery.wysiwyg.js", "jquery/jquery.datatables.js", "jquery/jquery.datepicker.js", "jquery/jquery.fileinput.js", "jquery/jquery.fullcalendar.min.js", "jquery/jquery.ui.totop.js", "jquery/jquery.ui.totop.js", "jquery/jquery.snippet.js", "jquery/jquery.muonmenu.js", "jquery/jquery.muonmenu.js", "script.js", "checkout.js" %>
+
+    <%= javascript_include_tag "libs/selectivizr.js", "jquery/jquery.visualize.js", "jquery/jquery.visualize.tooltip.js", "jquery/jquery.tipsy.js", "jquery/jquery.nyromodal.min.js", "jquery/jquery.wysiwyg.js", "jquery/jquery.datatables.js", "jquery/jquery.datepicker.js", "jquery/jquery.fileinput.js", "jquery/jquery.fullcalendar.min.js", "jquery/jquery.ui.totop.js", "jquery/jquery.ui.totop.js", "jquery/jquery.snippet.js", "jquery/jquery.muonmenu.js", "jquery/jquery.muonmenu.js", "script.js", "checkout.js", "bootstrap.min.js", "bootstrap-modal.js" %>
+
 
 <script>
 $(document).ready(function($){
@@ -865,6 +878,35 @@ populate_order_stats();
 //summary_stats();
 });
 </script>
+
+
+<div style="display:none;" class="modal order-profile fade">
+  <div class="modal-header" style="padding: 10px;">
+
+<a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+    <h3 id="modal-head" style="color:#676767;font-size: 28px;">
+Order Information
+</h3>
+</div>
+
+  <div class="modal-body">
+
+<table id="profile-table" class="table table-condensed table-striped">
+
+</table>
+
+
+
+<table id="products-table" class="table table-condensed table-striped">
+
+</table>
+
+  </div>
+
+  <div class="modal-footer">
+  </div>
+ </div>
+
 </body>
 </html>
 

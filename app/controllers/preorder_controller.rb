@@ -35,10 +35,12 @@ while (@count < params[:products].size)
 
 @id = params[:products][@count]
 @quantity = params[:product][@id]
+if (@quantity) && (@quantity.to_i > 0)
 @item = Item.create(:quantity=> @quantity, :product_id=>@id)
+
 @item.order_id = @order.id
 @item.save
-
+end
 @count = @count + 1
 
 end

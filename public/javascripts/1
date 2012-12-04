@@ -17,9 +17,9 @@ function addCommas(nStr)
 }
 
 
-function orderinfo(order_id){
+function orderinfo(order_id) {
 
-//$(".order-profile").modal("show");
+$(".order-profile").modal("show");
 
 }
 
@@ -132,45 +132,24 @@ $("#total-rebate").html(total_rebate.toFixed(2));
 
 }
 
-
-function products_in_order(id) {
+function populate_order_stats() {
 $.ajax({
-  url: "/products_in_order",
+  url: "performance/get_stats",
   type: 'POST',
-  data: "id=" + id,
+  data: "nada",
   success: function(selectValues){
 var json_object = JSON.parse(selectValues);
 var count = 0;
                 for (var i = 0; i < json_object.length; i++) {
 
-var html_string = "<tr><td> " + json_object[i].name + " </td><td>" + json_object[i].quantity  + " </td></tr>";
-$("#products-table").append(html_string);
+$(".order-data").append("<tr><td><a onclick='order_info(" + json_object[i].id + ");'>"+ json_object[i].name +"</a></td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].revenue +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone + "</tr>");
 }
 
-}
-});
-}
-
-
-function single_order(id) {
-$.ajax({
-  url: "/single_order",
-  type: 'POST',
-  data: "id=" + id,
-  success: function(selectValues){
-var json_object = JSON.parse(selectValues);
-var count = 0;
-                for (var i = 0; i < json_object.length; i++) {
-var html_string = "<tr><td> Name </td><td>" + json_object[i].name  + " </td></tr><tr><td> Email </td><td>" + json_object[i].email  + " </td></tr> <tr><td> Address </td><td>" + json_object[i].address  + " </td></tr><tr><td> Order Total </td><td>" + json_object[i].total  + " </td></tr> <tr><td> Deposit </td><td>" + json_object[i].deposit  + " </td></tr><tr><td> Balance </td><td>" + json_object[i].balance  + " </td></tr>";
-$("#profile-table").html(html_string);
-}
-
-
-
-//$('.datatable').dataTable({ 'sPaginationType':'full_numbers' });
+$('.datatable').dataTable({ 'sPaginationType':'full_numbers' });
 }
 });
 }
+
 
 function summary_stats() {
 $.ajax({
@@ -202,35 +181,10 @@ $.ajax({
 var json_object = JSON.parse(selectValues);
 var count = 0;
                 for (var i = 0; i < json_object.length; i++) {
-var order_id = json_object[i].id.toString();
 
-
-$(".order-data").append("<tr><td><a class='trigger-modal-profile' id='"+ json_object[i].id  + "'>" + json_object[i].name +"</a></td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].total +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone + "</td><td>" + json_object[i].address + "</td> <td>" + json_object[i].status + "</td> </tr>");
+$(".order-data").append("<tr><td><a onclick='order_info(" + json_object[i].id + ");'>" + json_object[i].name +"</a></td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].total +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone + "</td><td>" + json_object[i].address + "</td> <td>" + json_object[i].status + "</td> </tr>");
 
 }
-
-
-
-
-
-$(".trigger-modal-profile").click(function() {
-
-
-var order_id = $(this).attr("id");
-
-
-single_order(order_id);
-
-
-$(".order-profile").modal("show");
-
-
-
-
-
-
-});
-
 
 }
 
