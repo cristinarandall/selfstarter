@@ -3,6 +3,16 @@ class AdminsController < ApplicationController
   layout 'admin'
 
 
+def export 
+
+    @orders = Order.order(:created_at) #find(:all, :order=>"created_at ASC")
+    respond_to do |format|
+      format.html
+      format.csv { send_data @orders.to_csv_alternative }
+    end
+
+end
+
 def products_in_order
 
 @return_hash = []
@@ -77,11 +87,13 @@ end
 
 if @order.address_two && @order.city && @order.state && @order.zip && @order.country
 @address_string = @order.address_two + "," + @order.city + "," + @order.state + "," + @order.zip + "," + @order.country
+elsif @order.address_one && @order.city && @order.state && @order.zip && @order.country
+@address_string = @order.address_one + "," + @order.city + "," + @order.state + "," + @order.zip + "," + @order.country
 elsif @order.city && @order.state
 @address_string = @order.city + "," + @order.state
 end
 
-                @return_hash << { :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
+                @return_hash << { :order_id=>@order.id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
 
 respond_to do |format|
      format.js { render :json=>@return_hash.to_json }

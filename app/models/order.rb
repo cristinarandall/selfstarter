@@ -5,6 +5,18 @@ class Order < ActiveRecord::Base
   belongs_to :user
   self.primary_key = 'uuid'
 
+
+ def self.to_csv_alternative(options = {})
+    CSV.generate(options) do |csv|
+      csv << ["name", "email" ]
+      all.each do |product|
+        csv << product.attributes.values
+#        csv << product.attributes.values_at(*column_names)
+      end
+    end
+  end
+
+
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
   def self.prefill!(options = {})
     @order          = Order.new

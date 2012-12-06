@@ -10,6 +10,7 @@ Selfstarter::Application.routes.draw do
   match '/admin'               => 'admins#index'
   match '/send_message'               => 'products#send_message'
   match '/products_in_order'          => 'admins#products_in_order'
+  match '/export'          => 'admins#export'
   get 'preorder/checkout'
   match '/preorder/share/:uuid'   => 'preorder#share', :via => :get
   match '/preorder/ipn'           => 'preorder#ipn', :via => :post
