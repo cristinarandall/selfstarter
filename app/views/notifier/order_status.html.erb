@@ -117,8 +117,10 @@
 									<td height="30" width="170" align="left" valign="middle" style="text-align: left; border-bottom: 1px dotted #D3D3CE;"> 
 
 
-<%= item.name %>
-
+<% if item.product_id %>
+<% @prod = Product.find(item.product_id) %>
+<%= @prod.name %>
+<% end %>
 
 
 
