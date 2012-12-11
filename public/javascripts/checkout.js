@@ -146,12 +146,12 @@ var count = 0;
 //$("#products-table").html("");
                 for (var i = 0; i < json_object.length; i++) {
 
-var html_string = "<tr><td> " + json_object[i].name + " </td><td>" + json_object[i].quantity  + " </td></tr>";
+var html_string = html_string + "<tr><td> " + json_object[i].name + " </td><td>" + json_object[i].quantity  + " </td></tr>";
 $("#products-table").append(html_string);
 }
 
 
-//$("#products-table").html(html_string);
+$("#products-table").html(html_string);
 
 
 }
