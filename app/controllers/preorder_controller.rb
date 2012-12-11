@@ -48,7 +48,7 @@ end
 
 @order.balance = params[:balance]
 @order.deposit = params[:deposit]
-@order.total = params[:balance].to_i + params[:deposit].to_i
+@order.total = params[:balance].to_f + params[:deposit].to_f
 @order.save
 
     # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
