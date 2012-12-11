@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gritworks</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+</head>
+
+<body bgcolor="#E1E1DC" style="background: #E1E1DC; padding: 0px; margin: 0px;" >
+<!-- START main table -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" >
+<tr>
+	<td bgcolor="#E1E1DC" align="center" ><div align="center">
+		<!-- START main centred table -->
+		<table width="630" border="0" cellpadding="0" cellspacing="0">
+			<tr> 
+			<td>
+				<!-- START main content table -->
+				<table width="630" border="0" cellspacing="0" cellpadding="0">
+				
+					<!-- START module / top head info navi -->
+					<tr>
+					<td bgcolor="#505050" height="0" colspan="2" >
+					</td>
+					</tr>
+					<!-- END module -->
+					<!-- START module / header logo -->
+					<tr>
+					 <td bgcolor="#3986BC" colspan="2" >
+							<table width="630" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+								<!-- table column with logo -->
+								<td align="left" valign="middle">
+									<table border="0" cellspacing="30" cellpadding="0" >
+										<tr>
+
+                                            <!--table row with logo--><td><img style="max-width: 400px;" src="https://s3.amazonaws.com/selfstarter/FundingSite-Checkout-Nov21-HeaderLogoOnly.png" alt="logo header" border="no" style="margin: 0px; padding: 0px; display: block;"/></td>
+										</tr>
+									</table>
+								</td>
+								<!-- table column with ribbon-->
+								<td align="right" valign="middle">
+								</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<!-- END module -->
+					<!-- START module / two columns with texts -->
+					<tr>
+					<td bgcolor="#FFFFFF" colspan="2" style="border-top: none; border-right: none; border-bottom: 1px solid #E1E1DC; border-left: none;">
+						<table width="630" border="0" cellspacing="30" cellpadding="0">
+							<tr>
+								<!--table row column with text-->
+								<td width="370" align="left" valign="top" style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 20px; color: #999999;">
+								<!--text goes here-->
+
+
+
+
+<br/>
+<br/>
+
+<br/>			
+
+
+					</td>
+								<!--table row column with text-->
+								<td width="370" align="right" valign="top" style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 20px; color: #999999;">
+								<!--text goes here-->
+
+
+
+<br/>
+
+
+
+								</td>
+							</tr>
+						</table>
+					</td>
+					</tr>
+					<!-- END module -->
+					<!-- START module / invoice table-->
+					<tr>
+					<td bgcolor="#FFFFFF" colspan="2" style="border-top: none; border-right: none; border-bottom: 1px solid #E1E1DC; border-left: none;">
+						<table width="630" border="0" cellspacing="0" cellpadding="30">
+							<tr>
+							<td width="570" align="left" valign="top" >
+								<!-- START comparison table-->
+								<table width="570" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 20px; color: #999999;">
+									<tr>
+
+									<!-- table row with invoice number -->
+									<td height="50" align="left" valign="top" style="font-family: Arial,Helvetica,sans-serif; font-size: 18px; line-height: 22px; font-weight: bold; color: #646464;"> Order #000<%= @order.id.to_s %> <span style="color:#3986BC;">  </span></td>
+									</tr>
+									<!-- table row no1.-->
+									<tr>
+									<!-- table column with item text -->
+									<td height="30" width="170" align="left" valign="middle" style="font-weight: bold; line-height: 22px; text-align: left; color: #3986BC; border-bottom: 1px dotted #D3D3CE;"> Product</td>
+									<!-- table column with item number-->
+									<td height="30" width="100" align="left" valign="middle" style="font-weight: bold; line-height: 22px; text-align: left; color: #3986BC; border-bottom: 1px dotted #D3D3CE;"> </td>
+									<!-- table column with item quantity-->
+									<td height="30" width="100" align="center" valign="middle" style="font-weight: bold; line-height: 22px; text-align: center; color: #3986BC; border-bottom: 1px dotted #D3D3CE;"> Quantity</td>
+									<!-- table column with item price per pc -->
+									<td height="30" width="100" align="right" valign="middle" style="font-weight: bold; line-height: 22px; text-align: right; color: #3986BC; border-bottom: 1px dotted #D3D3CE;"> Unit Price</td>
+									<!-- table column with item price -->
+									<td height="30" width="100" align="right" valign="middle" style="font-weight: bold; line-height: 22px; text-align: right; color: #3986BC; border-bottom: 1px dotted #D3D3CE;">Price</td>
+									</tr>
+									<!-- table row no2.-->
+
+<% for item in @items %>
+									<tr>
+									<!-- table column with item name-->
+									<td height="30" width="170" align="left" valign="middle" style="text-align: left; border-bottom: 1px dotted #D3D3CE;"> 
+
+
+<%= item.name %>
+
+
+
+
+
+
+
+
+
+
+
+
+</td>
+									<!-- table column with item number-->
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left; border-bottom: 1px dotted #D3D3CE;">  </td>
+									<!-- table column with item quantity-->
+									<td height="30" width="100" align="center" valign="middle" style="text-align: center; border-bottom: 1px dotted #D3D3CE;"><%= item.quantity %></td>
+									<!-- table column with item price per pc -->
+									<td height="30" width="100" align="right" valign="middle" style="text-align: right; border-bottom: 1px dotted #D3D3CE;"> $ <%= item.price %></td>
+									<!-- table column with item price -->
+									<td height="30" width="100" align="right" valign="middle" style="text-align: right; border-bottom: 1px dotted #D3D3CE;"> $ <%= (not item.price.nil? and not item.quantity.nil?) ? (item.price.to_i)*(item.quantity.to_i) : 0%> </td>
+									</tr>
+
+<% end %>
+
+
+									<!-- table row no5.-->
+									<tr>
+									<!-- empty table column -->
+									<td height="30" width="170" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- empty table column -->
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- empty table column -->
+									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
+									<!-- table column with subtotal text -->
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- table column with subtotal price -->
+									<td height="30" width="100" align="right" valign="middle" style="text-align: right;"><%= "%.2f" % @order.subtotal%> $</td>
+
+									</tr>
+									<!-- table row no6.-->
+									<tr>
+									<!-- empty table column -->
+									<td height="30" width="170" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- empty table column -->
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- empty table column -->
+									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
+									<!-- table column with VAT text -->
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;">Deposit Paid:</td>
+									<!-- table column with VAT price-->
+                                    <!-- @tax = 0.16 -->
+                                    <!-- @tax_total = @tax*(@order_total.to_i) -->
+                                    <!-- @final = (@order_total.to_i) + (@tax.to_i) -->
+									<td height="30" width="100" align="right" valign="middle" style="text-align: right;">
+
+$ <%= @deposit %>
+
+</td>
+									</tr>
+									<tr>
+									<!-- empty table column -->
+									<td height="30" width="170" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- empty table column -->
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- empty table column -->
+									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
+									<!-- table column with VAT text -->
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"> Balance:</td>
+									<!-- table column with VAT price-->
+									<td height="30" width="100" align="right" valign="middle" style="text-align: right;">
+
+
+$ <%= @balance %></td>
+									</tr>
+									<!-- table row no7.-->
+									<tr>
+									<!-- empty table column -->
+									<td height="30" width="170" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- empty table column -->
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"></td>
+									<!-- empty table column -->
+									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
+									<!-- table column with total text -->
+									<td height="30" width="100" align="left" valign="middle" style="color: #646464; font-weight: bold; text-align: left;">Total:</td>
+									<!-- table column with total price -->
+									<td height="30" width="100" align="right" valign="middle" style="color: #646464; font-weight: bold; text-align: right;"> <%= @order.total %> $</td>
+									</tr>
+								</table>
+							</td>
+							</tr>
+							</table>
+					</td>
+					</tr>
+					<!-- END module -->
+					<!-- START module / gray spliter-->
+					<tr>
+					<td bgcolor="#FFFFFF" colspan="2">
+
+</td>
+					</tr>
+					<!-- END module -->
+					<!-- START module / wide text 570px -->
+					<tr>
+					<td bgcolor="#FFFFFF" colspan="2" style="border-top: none; border-right: none; border-bottom: 1px solid #E1E1DC; border-left: none;" >
+						<table width="630" border="0" cellspacing="0" cellpadding="30" >
+							<tr>
+							<!-- table row with text -->
+							<td width="570" align="left" valign="top" style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-style: italic; line-height: 20px; color: #999999;">
+							<!--here goes regular text -->
+							</td>
+							</tr>
+						</table>
+					</td>
+					</tr>
+					<!-- END module -->
+					<!-- START module / footer -->
+					<tr>
+					<td colspan="2">
+						<table width="630" border="0" cellspacing="0" cellpadding="30">
+							<tr>
+							<!-- table column with logo image -->
+							<td align="left" valign="top">
+							
+							</td>
+							<!-- table column with contact data -->
+							<td align="right" valign="top" style="margin:0px; padding: 30px; font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 20px; color: #888888;">
+							<a href="" title="" target="_blank" style="color: #3986BC; text-decoration: none;"></a> / 
+
+<a href="http://gritworks.com/" title="" target="_blank" style="color: #3986BC; text-decoration: none;"> Gritworks</a>
+							</td>
+							</tr>
+						</table>
+					</td>
+					</tr>
+					<!-- END module -->
+				
+				</table>
+				<!-- END main content table -->
+			 </td>
+		</tr>
+		</table>
+		<!-- END main centred table -->
+	</div></td>
+</tr>
+</table>
+<!-- END main table -->
+</body>
+</html>
+
+
