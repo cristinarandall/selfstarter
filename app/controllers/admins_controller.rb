@@ -7,7 +7,6 @@ def export
 
     @orders = Order.order(:created_at) #find(:all, :order=>"created_at ASC")
     respond_to do |format|
-      format.html
       format.csv { send_data @orders.to_csv_alternative }
     end
 

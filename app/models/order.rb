@@ -8,10 +8,12 @@ class Order < ActiveRecord::Base
 
  def self.to_csv_alternative(options = {})
     CSV.generate(options) do |csv|
-      csv << ["name", "email" ]
+#      csv << ["name", "email" ]
+    csv << column_names
+
       all.each do |product|
-        csv << product.attributes.values
-#        csv << product.attributes.values_at(*column_names)
+#        csv << product.attributes.values
+        csv << product.attributes.values_at(*column_names)
       end
     end
   end
