@@ -144,6 +144,10 @@ var count = 0;
 
 
 //$("#products-table").html("");
+
+
+var html_string = "<thead><tr><th>Product Name</th><th> Quantity</th></tr></thead>";
+
                 for (var i = 0; i < json_object.length; i++) {
 
 var html_string = html_string + "<tr><td> " + json_object[i].name + " </td><td>" + json_object[i].quantity  + " </td></tr>";
