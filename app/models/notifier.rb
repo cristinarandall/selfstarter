@@ -5,7 +5,7 @@ class Notifier < ActionMailer::Base
 def order_status(order, items,email)
   @order = order
   @items = items
-  @order_email = order.email
+  @order_email = email
   @deposit = order.deposit
   @balance = order.balance
   @total = order.total
