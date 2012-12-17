@@ -152,8 +152,12 @@
 
 <% if item.product_id %>
 <% @prod = Product.find(item.product_id) %>
-<%= @prod.price * item.quantity *1.00 %>
+
+<% @price = ((@prod.price) * (item.quantity) *(1.00)) %>
+<%= @price %>
+
 <% end %> 
+
 
 </td>
 									</tr>
