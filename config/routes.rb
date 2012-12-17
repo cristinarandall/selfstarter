@@ -3,6 +3,7 @@ Selfstarter::Application.routes.draw do
   match '/preorder'               => 'preorder#index'
   match '/products'               => 'products#index'
   match '/checkout'               => 'products#index'
+  match '/pay_balance'            => 'admins#pay_balance'
   match '/feedback'               => 'contacts#index'
   match '/get_orders'               => 'admins#get_orders'
   match '/single_order'		    => 'admins#single_order'

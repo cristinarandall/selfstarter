@@ -291,6 +291,27 @@ calculate_discount();
 });
 
 
+$(".charge-balance").live("click", function(e){
+
+
+$(this).attr("data-id");
+
+
+$.ajax({
+  url: "/pay_balance",
+  type: 'POST',
+  data: "order_id=" + id,
+  success: function(selectValues){
+var json_object = JSON.parse(selectValues);
+var count = 0;
+
+
+}
+});
+
+});
+
+
 $('.item-row input.quantity').change(function() {
 
 
