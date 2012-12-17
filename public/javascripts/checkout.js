@@ -297,6 +297,9 @@ $(".charge-balance").live("click", function(e){
 var id = $(this).attr("data-id");
 
 
+$(this).removeClass("red").addClass("green");
+$(this).html("Successfully charged deposit");
+
 $.ajax({
   url: "/pay_balance",
   type: 'POST',
@@ -306,8 +309,6 @@ var json_object = JSON.parse(selectValues);
 var count = 0;
 
 
-$(this).removeClass("red").addClass("green");
-$(this).html("Successfully charged deposit");
 
 }
 });
