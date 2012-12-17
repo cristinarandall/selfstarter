@@ -64,7 +64,6 @@ end
 
 @items = Item.find_all_by_order_id(@order.id)
 
-
 Notifier.order_status(@order, @items, params[:email])
     redirect_to @pipeline.url("#{request.scheme}://#{request.host}/preorder/postfill")
   end
