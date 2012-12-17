@@ -1,6 +1,7 @@
 Selfstarter::Application.routes.draw do
   root :to => 'preorder#index'
   match '/get_orders'               => 'admins#get_orders'
+  match '/login'               => 'user_sessions#index'
   match '/preorder'               => 'preorder#index'
   match '/products'               => 'products#index'
   match '/checkout'               => 'products#index'
