@@ -23,6 +23,7 @@ options = {}
 options[:ChargeFeeTo] = "Caller"
   response = AmazonFlexPay.pay(@order.balance, 'USD', @order.token, @order.uuid)
 @order.balance_payment_transaction_id =response.transaction_id
+@order.status = "Paid Deposit & Balance" 
 @order.save
 
 
