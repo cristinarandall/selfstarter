@@ -59,27 +59,29 @@
 			<section>
 				
 				<div id="logform">
-					<form>
+					<form action="/sign_in">
 						<dl>
 							<dt>
 								<label>Login</label>
 							</dt>
 							<dd>
-								<input type="text" name="loginName" value="">
+								<input type="text" name="useremail" value="">
 							</dd>
 							<dt>
 								<label>Password</label>
 							</dt>
 							<dd>
-								<input type="password" name="loginPass" value="">
+								<input type="password" name="userpassword" value="">
 							</dd>
+<!--
 							<dt class="checkbox remember"><label>Remember me for a 2 weeks</label></dt>
 							<dd class="remember"><input type="checkbox" name="loginRemeber"></dd>
+-->
 						</dl>
 						<button type="submit">Submit</button>
 					</form>
 				</div>
-				<div id="regform">
+				<div style="display:none;" id="regform">
 					<h3>Create an Account</h3>
 					<form class="vertical-form">
 						<dl>

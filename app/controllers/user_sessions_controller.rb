@@ -18,18 +18,14 @@ class UserSessionsController < ApplicationController
      if @user
      
      else
-             if params[:conversion]
-              redirect_to :controller => 'conversions', :action => 'index', :success=>"false"
-             else
-              redirect_to :controller => 'actions', :action => 'new', :success=>"false"
-             end
+              redirect_to :controller => 'admins', :action => 'index', :success=>"true"
      end
 
     else
 
         #to do: alert the user if their account is not active
         flash[:login] = "usaurio y contrasena no son correctos"
-                redirect_to :controller => 'actions', :action => 'new', :success=>"false"
+                redirect_to :controller => 'user_sessions', :action => 'index', :success=>"false"
     end
 
   end
