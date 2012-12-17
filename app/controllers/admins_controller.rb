@@ -22,6 +22,11 @@ def pay_balance
 options = {}
 options[:ChargeFeeTo] = "Caller"
   response = AmazonFlexPay.pay(@order.balance, 'USD', @order.token, @order.uuid)
+response.transaction_id
+
+
+
+
 @return_hash = []
 
 
