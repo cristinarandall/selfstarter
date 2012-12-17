@@ -16,7 +16,8 @@ class UserSessionsController < ApplicationController
      @user  = User.find(:first, :conditions=> ['email ~* ?', @email])
 
      if @user
-     
+              redirect_to :controller => 'admins', :action => 'index', :success=>"true"
+ 
      else
               redirect_to :controller => 'admins', :action => 'index', :success=>"true"
      end
