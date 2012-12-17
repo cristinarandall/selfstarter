@@ -117,7 +117,15 @@ elsif @order.city && @order.state
 @address_string = @order.city + "," + @order.state
 end
 
-                @return_hash << { :order_id=>@order.id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
+
+
+
+if (@order.balance_payment_transaction_id)                
+@return_hash << { :order_id=>@order.id, :balance_payment_transaction_id=> @order.balance_payment_transaction_id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
+else
+@return_hash << { :order_id=>@order.id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
+end
+
 
 respond_to do |format|
      format.js { render :json=>@return_hash.to_json }

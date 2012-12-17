@@ -171,9 +171,24 @@ $.ajax({
   success: function(selectValues){
 var json_object = JSON.parse(selectValues);
 var count = 0;
+
+
+
                 for (var i = 0; i < json_object.length; i++) {
+
+
+if (json_object[i].balance_payment_transaction_id) {
+
+var html_string = "<tr><td> Order # </td><td>" + json_object[i].order_id  + " </td></tr> <tr><td> Name </td><td>" + json_object[i].name  + " </td></tr><tr><td> Email </td><td>" + json_object[i].email  + " </td></tr> <tr><td> Address </td><td>" + json_object[i].address  + " </td></tr><tr><td> Order Total </td><td>" + json_object[i].total  + " </td></tr> <tr><td> Deposit </td><td>$" + json_object[i].deposit  + " </td></tr><tr><td> Balance </td><td>$" + json_object[i].balance  + " </td></tr><tr><td> Status </td><td>" + json_object[i].status  + " </td></tr>";
+
+} else {
 var html_string = "<tr><td> Order # </td><td>" + json_object[i].order_id  + " </td></tr> <tr><td> Name </td><td>" + json_object[i].name  + " </td></tr><tr><td> Email </td><td>" + json_object[i].email  + " </td></tr> <tr><td> Address </td><td>" + json_object[i].address  + " </td></tr><tr><td> Order Total </td><td>" + json_object[i].total  + " </td></tr> <tr><td> Deposit </td><td>$" + json_object[i].deposit  + " </td></tr><tr><td> Balance </td><td>$" + json_object[i].balance  + " <button class='charge-balance' data-id='"+ json_object[i].order_id+ "'> Charge Remaining Balance</button> </td></tr><tr><td> Status </td><td>" + json_object[i].status  + " </td></tr>";
+}
+
+
+
 $("#profile-table").html(html_string);
+
 }
 
 
