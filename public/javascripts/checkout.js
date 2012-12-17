@@ -294,7 +294,7 @@ calculate_discount();
 $(".charge-balance").live("click", function(e){
 
 
-$(this).attr("data-id");
+var id = $(this).attr("data-id");
 
 
 $.ajax({
