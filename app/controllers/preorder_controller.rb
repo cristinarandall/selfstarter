@@ -14,7 +14,7 @@ class PreorderController < ApplicationController
   end
 
   def prefill
-    @user  = User.find_or_create_by_email!(params[:email])
+    @user  = User.find_by_email(params[:email])
 
     if @user.nil?
     @user  = User.create(:email=>params[:email], :name=>params[:name])
