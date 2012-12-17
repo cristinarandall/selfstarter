@@ -25,7 +25,7 @@ class PreorderController < ApplicationController
    #end
 
 puts "user id"
-put @user.id.to_s
+puts @user.id.to_s
 
    if @user   
     @order = Order.prefill!(:user_id => @user.id, :name=>params[:email], :price=>100)
