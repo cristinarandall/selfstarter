@@ -56,7 +56,7 @@ end
     # From there, we save it, and voila, we got ourselves a preorder!
 
 @description = "Deposit made at time of pre-order is non-refundable.  Balance is due and will be charged to your card just prior to the shipment of the pre-order to you."
-    @pipeline = AmazonFlexPay.multi_use_pipeline(@order.uuid, :transaction_amount => params[:deposit], :global_amount_limit => @order.total, :collect_shipping_address => "True", :payment_reason => @description)
+    @pipeline = AmazonFlexPay.multi_use_pipeline(@order.uuid, :transaction_amount => params[:deposit], :global_amount_limit => @order.total, :collect_shipping_address => "True", :payment_reason => @description, :amount_type=>"Minimum")
     redirect_to @pipeline.url("#{request.scheme}://#{request.host}/preorder/postfill")
   end
 

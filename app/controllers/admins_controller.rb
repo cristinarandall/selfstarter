@@ -12,6 +12,26 @@ def export
 
 end
 
+
+def pay_balance
+
+
+@order = Order.find(params[:order_id])
+
+
+options = {}
+options[:ChargeFeeTo] = "Caller"
+  response = AmazonFlexPay.pay(@order.balance, 'USD', @order.token, @order.uuid)
+@return_hash = []
+
+
+
+respond_to do |format|
+     format.js { render :json=>@return_hash.to_json }
+end
+
+end
+
 def products_in_order
 
 @return_hash = []
