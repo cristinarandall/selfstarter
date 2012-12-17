@@ -86,8 +86,12 @@ end
 
   def index
 
-
+if current_user && current_user.email.match("payments@gritworks.com")  
    @products = Product.find(:all)
+
+else 
+              redirect_to :controller => 'user_sessions', :action => 'index', :success=>"false"
+end
 
 
   end
