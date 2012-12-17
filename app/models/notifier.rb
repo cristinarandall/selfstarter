@@ -12,7 +12,7 @@ def order_status(order, items,email)
 
   m = mail(
   :subject=>'Order Notification from Gritworks',
-  :to=>"cristinarandall@gmail.com",
+  :to=>email,
   :from => "no-reply@gritworks.heroku.com", #payments@gritworks.com
   :content_type => "text/html"#,
   ) do |format|
