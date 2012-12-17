@@ -16,13 +16,16 @@ class PreorderController < ApplicationController
   def prefill
     @user  = User.find_or_create_by_email!(params[:email])
 
-    if @user
+    if @user.nil?
     @user  = User.create(:email=>params[:email], :name=>params[:name])
     end
 
    #if param[:id]
    #@product = Product.find(params[:id])
    #end
+
+puts "user id"
+put @user.id.to_s
 
    if @user   
     @order = Order.prefill!(:user_id => @user.id, :name=>params[:email], :price=>100)
