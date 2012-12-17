@@ -138,9 +138,22 @@
 									<!-- table column with item quantity-->
 									<td height="30" width="100" align="center" valign="middle" style="text-align: center; border-bottom: 1px dotted #D3D3CE;"><%= item.quantity %></td>
 									<!-- table column with item price per pc -->
-									<td height="30" width="100" align="right" valign="middle" style="text-align: right; border-bottom: 1px dotted #D3D3CE;">  </td>
+									<td height="30" width="100" align="right" valign="middle" style="text-align: right; border-bottom: 1px dotted #D3D3CE;">  
+
+
+<% if item.product_id %>
+<% @prod = Product.find(item.product_id) %>
+<%= @prod.price %>
+<% end %>
+
+</td>
 									<!-- table column with item price -->
 									<td height="30" width="100" align="right" valign="middle" style="text-align: right; border-bottom: 1px dotted #D3D3CE;"> 
+
+<% if item.product_id %>
+<% @prod = Product.find(item.product_id) %>
+<%= @prod.price * item.quantity *1.00 %>
+<% end %> 
 
 </td>
 									</tr>
