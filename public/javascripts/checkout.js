@@ -237,7 +237,7 @@ $(".order-data").append("<tr><td><a class='trigger-modal-profile' id='"+ json_ob
 
 
 
-
+$('.datatable').dataTable({ 'sPaginationType':'full_numbers' });
 
 $(".trigger-modal-profile").click(function() {
 
@@ -249,12 +249,6 @@ single_order(order_id);
 products_in_order(order_id);
 
 $(".order-profile").modal("show");
-
-
-
-
-
-
 });
 
 
