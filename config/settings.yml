@@ -20,7 +20,7 @@ product_image_path: "https://s3.amazonaws.com/selfstarter/photo-full.jpeg"
 value_proposition: "Augmented Reality Earphones"
 
 # YouTube or Vimeo Video URL (The embed URL, without the query string options)
-video_embed_url: "https://www.youtube.com/v/D1L3o88GKew"
+video_embed_url: "http://www.youtube.com/embed/YYSW0bWPTJ4"
 
 # Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
 
@@ -54,12 +54,12 @@ progress_text: "Implemented"
 # Call to action section
 
 # On Lockitron, it's "First Batch Ships in March 2013"
-ships: "Ships...sometime"
+ships: "Don’t Forget Kickstarter Rebate. Pledge on Kickstarter to qualify"
 
 # On Lockitron, it's "Reserve Now"
 call_to_action: "Reserve Now"
 # On Lockitron, this is "Only $149 for a limited time"
-price_human: "It costs money!"					
+price_human: "Shipments start May through July (depending on model)"					
 
 # The paragraph below the price. You'd probably say something about how you're not going to charge them before it ships (so it's less risky).
 dont_give_them_a_reason_to_say_no: "Earphones that emPOWER you to use your portable audio devices in more places, more activities and greater comfort than ever before."

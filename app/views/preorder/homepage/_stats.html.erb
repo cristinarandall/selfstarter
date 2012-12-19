@@ -1,10 +1,11 @@
 <div class="wrapper clearfix">
   <div id="video">
-   
+
+<!--   
 <img width='512' height='385' src="https://s3.amazonaws.com/selfstarter/ProjectImage-VIDEO.png"/> 
-<!--
-<iframe width='512' height='385' src="<%= video_url %>"></iframe>
 -->
+
+<iframe width='512' height='385' src="<%= video_url %>"></iframe>
 
   </div>
 
@@ -16,7 +17,7 @@
       </li>
       <li class="stats">
         <%= number_to_currency Order.revenue, :precision => 0 %>
-        <span>of <%= number_to_currency Settings.project_goal.to_f * Settings.price.to_f, :precision => 0 %></span>
+        <span>of $150,000</span>
       </li>
 
       <% if Settings.expiration_date.present? %>
