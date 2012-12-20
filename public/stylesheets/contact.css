@@ -229,9 +229,11 @@ h5 {
   padding:40px 0;
 }
 .footer ul {
+float: left;
 }
 .footer li {
   margin-bottom:10px
+float: left;
 }
 .footer a {
   font-size:18px;
