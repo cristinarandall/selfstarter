@@ -20,9 +20,6 @@ class PreorderController < ApplicationController
     @user  = User.create(:email=>params[:email], :name=>params[:name])
     end
 
-   #if param[:id]
-   #@product = Product.find(params[:id])
-   #end
 
 puts "user id"
 puts @user.id.to_s
@@ -32,8 +29,6 @@ puts @user.id.to_s
    end    
 
 
-puts "size"
-@count = 0
 while (@count < params[:products].size)
 
 @id = params[:products][@count]
@@ -59,7 +54,14 @@ end
     # From there, we save it, and voila, we got ourselves a preorder!
 
 puts "total"
-puts @order.total
+puts @order.total.to_s
+
+puts "deposit"
+puts @order.deposit.to_s
+
+puts "balance"
+puts @order.balance.to_s
+
 
 @description = "Deposit made at time of pre-order is non-refundable.  Balance is due and will be charged to your card just prior to the shipment of the pre-order to you."
     @pipeline = AmazonFlexPay.multi_use_pipeline(@order.uuid, :transaction_amount => params[:deposit], :global_amount_limit => @order.total, :collect_shipping_address => "True", :payment_reason => @description, :amount_type=>"Minimum")
