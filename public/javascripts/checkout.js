@@ -280,6 +280,12 @@ calculate_discount();
 
 $(".item-row input.quantity").bind("keyup", function(e){
 
+
+
+var actual_value = $(this).attr("value");
+
+$(this).attr("value", actual_value.substring(0, 3));
+
 calculate_discount();
 
 });
