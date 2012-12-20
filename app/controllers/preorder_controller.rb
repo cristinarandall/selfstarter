@@ -64,7 +64,7 @@ puts @order.balance.to_s
 
 
 @description = "Deposit made at time of pre-order is non-refundable.  Balance is due and will be charged to your card just prior to the shipment of the pre-order to you."
-    @pipeline = AmazonFlexPay.multi_use_pipeline(@order.uuid, :transaction_amount => params[:deposit], :global_amount_limit => @order.total, :collect_shipping_address => "True", :payment_reason => @description, :amount_type=>"Minimum")
+    @pipeline = AmazonFlexPay.multi_use_pipeline(@order.uuid, :transaction_amount => params[:deposit], :global_amount_limit => @order.total.to_i, :collect_shipping_address => "True", :payment_reason => @description, :amount_type=>"Minimum")
 
 
 @items = Item.find_all_by_order_id(@order.id)
