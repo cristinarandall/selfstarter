@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :persistence_token, :password_salt, :password_salt, :perishable_token, :password, :active
+  attr_accessible :email, :name, :persistence_token, :password_salt, :password_salt, :perishable_token, :password
   has_many :orders
 
 
