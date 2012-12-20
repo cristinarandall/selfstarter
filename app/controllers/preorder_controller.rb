@@ -28,7 +28,7 @@ puts @user.id.to_s
     @order = Order.prefill!(:user_id => @user.id, :name=>params[:email], :price=>100)
    end    
 
-
+@count = 0
 while (@count < params[:products].size)
 
 @id = params[:products][@count]
