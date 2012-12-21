@@ -2,10 +2,14 @@
   <div id="video">
 
 <!--   
-<img width='512' height='385' src="https://s3.amazonaws.com/selfstarter/ProjectImage-VIDEO.png"/> 
+
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-image="https://s3.amazonaws.com/ksr/projects/375027/photo-full.jpg?1355640453" data-video-tracker-url="http://www.kickstarter.com/projects/2090296420/798760976/video/plays" data-video="https://s3.amazonaws.com/ksr/projects/375027/video-191921-h264_high.mp4" data-video_tag_markup="&lt;video controls='controls' height='420' id='movie' poster='https://s3.amazonaws.com/ksr/projects/375027/photo-full.jpg?1355640453' preload='none' src='https://s3.amazonaws.com/ksr/projects/375027/video-191921-h264_base.mp4' width='560'&gt;&lt;img alt='Photo-full' height='420' src='https://s3.amazonaws.com/ksr/projects/375027/photo-full.jpg?1355640453' width='560' /&gt;&lt;/video&gt;" style="height: 480px; width: 640px;"><div class="overlay" style="line-height: 480px"><span class="button-playvideo" style="display: none;"></span><object type="application/x-shockwave-flash" id="ksr_player_v18524424" class="ksr_player" name="ksr_player_v18524424" data="/swf/kickplayer.swf?2" width="640" height="480"><param name="allowscriptaccess" value="always"><param name="allowfullscreen" value="true"><param name="wmode" value="opaque"><param name="menu" value="false"><param name="flashvars" value="displayheight=480&amp;file=https://s3.amazonaws.com/ksr/projects/375027/video-191921-h264_high.mp4&amp;image=https://s3.amazonaws.com/ksr/projects/375027/photo-full.jpg?1355640453&amp;backcolor=000000&amp;screencolor=000000&amp;controlbar=over&amp;controlbar.idlehide=true&amp;autostart=true&amp;skin=/swf/kickskin.swf?2"></object></div></div>
+</div>
 -->
 
 <iframe width='512' height='385' src="http://www.youtube.com/embed/YYSW0bWPTJ4"></iframe>
+
   </div>
 
   <div id="backing">
@@ -22,7 +26,7 @@
       <% if Settings.expiration_date.present? %>
         <li class="stats" id="days">
           <%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\D/, "") %>
-          <span><%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> left</span>
+          <span>  35 days <% distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> left</span>
         </li>
       <% else %>
         <li class="stats" id="days">

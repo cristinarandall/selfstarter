@@ -32,7 +32,7 @@ def company_message(message, name, telephone, email, company)
     m = mail(
     :subject      =>"New Message: " + name,
     :from         => email,
-    :to   => "support@gritworks.com",
+    :to   => "payments@gritworks.com",
     :content_type =>"text/html"#,
     ) do |format|
         format.html
