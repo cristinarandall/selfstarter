@@ -284,7 +284,15 @@ $(".item-row input.quantity").bind("keyup", function(e){
 
 var actual_value = $(this).attr("value");
 
-$(this).attr("value", actual_value.substring(0, 3));
+var actual_value_int = parseInt(actual_value)
+if (actual_value_int > 50)
+{
+$(this).attr("value", 50);
+$("#exceed-error").fadeIn();
+
+}
+
+//$(this).attr("value", actual_value.substring(0, 3));
 
 calculate_discount();
 

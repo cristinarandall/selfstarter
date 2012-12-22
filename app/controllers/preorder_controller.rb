@@ -72,15 +72,23 @@ puts @order.balance.to_s
 
 @items = Item.find_all_by_order_id(@order.id)
 
-Notifier.order_status(@order, @items, params[:email])
-Notifier.order_status(@order, @items,"payments@gritworks.com")
+#Notifier.order_status(@order, @items, params[:email])
+#Notifier.order_status(@order, @items,"payments@gritworks.com")
     redirect_to @pipeline.url("#{request.scheme}://#{request.host}/preorder/postfill")
   end
 
   def postfill
     unless params[:callerReference].blank?
       @order = Order.postfill!(params)
+
+@items = Item.find_all_by_order_id(@order.id)
+        Notifier.order_status(@order, @items, @order.name)
+        Notifier.order_status(@order, @items,"payments@gritworks.com")
+
+
     end
+
+
     # "A" means the user cancelled the preorder before clicking "Confirm" on Amazon Payments.
     if params['status'] != 'A' && @order.present?
       redirect_to :action => :share, :uuid => @order.uuid

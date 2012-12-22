@@ -11,7 +11,7 @@ def order_status(order, items,email)
   @total = order.total
 
   m = mail(
-  :subject=>'Order Notification from Gritworks',
+  :subject=>'Order Notification from GRiTworks',
   :to=>email,
   :from => "no-reply@gritworks.heroku.com", #payments@gritworks.com
   :content_type => "text/html"#,

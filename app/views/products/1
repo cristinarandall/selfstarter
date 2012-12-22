@@ -34,7 +34,8 @@
 
 
 
-<div id="exceed-error" style="display:none;" class="alert alert-error">
+<div id="exceed-error" class="alert alert-error">
+              <button type="button" class="close" data-dismiss="alert">×</button>
               <strong> Quantity cannot exceed 50 units</strong> 
             </div>
 
