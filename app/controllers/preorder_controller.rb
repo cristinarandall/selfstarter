@@ -80,7 +80,7 @@ puts @order.balance.to_s
   def postfill
     unless params[:callerReference].blank?
       @order = Order.postfill!(params)
-
+      @order.gritworks_number
 @items = Item.find_all_by_order_id(@order.id)
         Notifier.order_status(@order, @items, @order.name)
         Notifier.order_status(@order, @items,"payments@gritworks.com")

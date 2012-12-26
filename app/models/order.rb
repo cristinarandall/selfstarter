@@ -124,7 +124,7 @@ end
 
 
 @date = self.created_at.to_date
-@first_digit = self.created_at.year.to_s
+@first_digit = self.created_at.year.to_s[3]
 @julian = @date.mjd - self.created_at.beginning_of_year.to_date.mjd
 @second = @first_digit + @julian.to_s
 
