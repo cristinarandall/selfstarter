@@ -165,6 +165,14 @@ end
 
 end
 
+if @order.user_id
+@user = User.find(@order.user_id)
+@name = @user.name
+else
+@name = ""
+end
+
+
 if order.address_two && order.city && order.state && order.zip && order.country
 @address_string = order.address_two + "," + order.city + "," + order.state + "," + order.zip + "," + order.country 
 elsif order.city && order.state
@@ -174,7 +182,7 @@ end
         @date = order.created_at.strftime("%m/%d/%y")
 
 
-                @return_hash << {:gritworks=>order.gritworks, :order_id=>order.uuid, :status=>order.status, :name=>order.name, :phone=>order.phone, :num_items=>@global_quantity, :total=>order.total, :email=>@user.email, :id=>order.id, :created_at=> @date, :products=>@prod_string, :address=>@address_string }
+                @return_hash << {:gritworks=>order.gritworks, :order_id=>order.uuid, :status=>order.status, :name=>@name, :phone=>order.phone, :num_items=>@global_quantity, :total=>order.total, :email=>@user.email, :id=>order.id, :created_at=> @date, :products=>@prod_string, :address=>@address_string }
 
 end
 
