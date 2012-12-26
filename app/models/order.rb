@@ -98,8 +98,12 @@ end
 
 @count = @count.to_s
 
-code = IsoCountryCodes.find(self.country)
 
+if self.country
+code = IsoCountryCodes.find(self.country)
+else
+code = IsoCountryCodes.find("United States")
+end
 
 if code
 @first = code.numeric
