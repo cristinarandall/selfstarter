@@ -165,8 +165,7 @@ end
 
 end
 
-if @order.user_id
-@user = User.find(@order.user_id)
+if @user 
 @name = @user.name
 else
 @name = ""
