@@ -132,7 +132,7 @@ end
 @checksum = Order.checksum(@number)
 
 
-@final = @first  + "-" + @second  + "-" + @third + "-" + @fourth_first + @checksum
+@final = @first.to_s  + "-" + @second.to_s  + "-" + @third.to_s + "-" + @fourth_first.to_s + @checksum.to_s
 self.gritworks = @final
 self.save
   end
