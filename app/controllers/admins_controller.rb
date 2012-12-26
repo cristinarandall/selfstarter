@@ -127,9 +127,9 @@ end
 
 
 if (@order.balance_payment_transaction_id)                
-@return_hash << { :order_id=>@order.id, :balance_payment_transaction_id=> @order.balance_payment_transaction_id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
+@return_hash << { :gritworks=>@order.gritworks, :order_id=>@order.id, :balance_payment_transaction_id=> @order.balance_payment_transaction_id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
 else
-@return_hash << { :order_id=>@order.id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
+@return_hash << { :gritworks=>@order.gritworks, :order_id=>@order.id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
 end
 
 
@@ -174,7 +174,7 @@ end
         @date = order.created_at.strftime("%m/%d/%y")
 
 
-                @return_hash << {:order_id=>order.uuid, :status=>order.status, :name=>order.name, :phone=>order.phone, :num_items=>@global_quantity, :total=>order.total, :email=>@user.email, :id=>order.id, :created_at=> @date, :products=>@prod_string, :address=>@address_string }
+                @return_hash << {:gritworks=>order.gritworks, :order_id=>order.uuid, :status=>order.status, :name=>order.name, :phone=>order.phone, :num_items=>@global_quantity, :total=>order.total, :email=>@user.email, :id=>order.id, :created_at=> @date, :products=>@prod_string, :address=>@address_string }
 
 end
 
