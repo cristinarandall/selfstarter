@@ -293,7 +293,7 @@ if (actual_value_int > 50)
 $(this).attr("value", 50);
 $("#exceed-error").fadeIn();
 
-setTimeout(hideMessage, 5000);
+setTimeout(hideMessage, 4000);
 }
 
 //$(this).attr("value", actual_value.substring(0, 3));

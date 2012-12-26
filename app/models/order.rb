@@ -6,6 +6,18 @@ class Order < ActiveRecord::Base
   self.primary_key = 'uuid'
 
 
+def import_country_codes
+
+require 'csv'
+
+  CSV.foreach(Rails.root.join('public/data', 'state_abbreviations.csv'), :headers => true) do |row|
+@state = Country.create(:name=>row[0],  :code=>row[1])
+
+  end
+
+end
+
+
  def self.to_csv_alternative(options = {})
     CSV.generate(options) do |csv|
 #      csv << ["name", "email" ]
@@ -63,6 +75,59 @@ class Order < ActiveRecord::Base
   def self.goal
     Settings.project_goal
   end
+
+
+
+def self.checksum(number)
+
+
+
+d = number.to_s.split(//) 
+sum_even = d[-2].to_i + d[-4].to_i + d[-6].to_i + d[-8].to_i + d[-10].to_i + d[-12].to_i + d[-14].to_i
+sum_odd = d[-3].to_i + d[-5].to_i + d[-7].to_i + d[-9].to_i + d[-11].to_i + d[-13].to_i + d[-15].to_i
+sum = sum_even * 3 + sum_odd
+check_code = 10 - sum % 10
+
+
+end
+
+  def gritworks_number
+
+#XXX-XXXX-XXXX-XXXX 
+@count = Order.find(:all, :conditions => {:created_at => self.created_at.beginning_of_day..self.created_at.end_of_day}).count + 1
+
+@count = @count.to_s
+
+code = IsoCountryCodes.find(self.country)
+
+
+if code
+@first = code.numeric
+else
+@first = "XXX"
+end
+
+if (@count.size == 1) 
+@third = "000" + @count 
+elsif (@count.size == 2) 
+@third = "00" + @count 
+elsif (@count.size == 3)
+@third = "0" + @count 
+end
+
+
+@fourth_first = "001"
+
+
+@date = self.created_at.to_date
+@first_digit = self.created_at.year.to_s
+@julian = @date.mjd - self.created_at.beginning_of_year.to_date.mjd
+@second = @first_digit + @julian.to_s
+
+@number = @first + @second + @third + @fourth_first
+@checksum = Order.checksum(@number)
+  end
+
 
   def self.percent
     (Order.current.to_f / Order.goal.to_f) * 100.to_f
