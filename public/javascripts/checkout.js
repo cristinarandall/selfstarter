@@ -234,7 +234,7 @@ var count = 0;
 var order_id = json_object[i].id.toString();
 
 
-$(".order-data").append("<tr><td> " + json_object[i].gritworks + "</td><td><a class='trigger-modal-profile' id='"+ json_object[i].id  + "'>" + json_object[i].name +"</a></td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].total +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td> <td>"+ json_object[i].phone + "</td><td>" + json_object[i].address + "</td> <td>" + json_object[i].status + "</td> </tr>");
+$(".order-data").append("<tr><td> " + json_object[i].gritworks + "</td><td><a class='trigger-modal-profile' id='"+ json_object[i].id  + "'>" + json_object[i].name +"</a></td><td >" + json_object[i].products + "</td><td >" + json_object[i].num_items + "</td><td> " + json_object[i].total +" </td> <td>"+ json_object[i].created_at + "</td> <td>"+ json_object[i].email + "</td><td>" + json_object[i].address + "</td> <td>" + json_object[i].status + "</td> </tr>");
 
 }
 
