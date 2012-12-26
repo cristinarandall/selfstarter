@@ -130,6 +130,11 @@ end
 
 @number = @first + @second + @third + @fourth_first
 @checksum = Order.checksum(@number)
+
+
+@final = @first  + "-" + @second  + "-" + @third + "-" + @fourth_first + @checksum
+self.gritworks = @final
+self.save
   end
 
 
