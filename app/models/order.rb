@@ -91,6 +91,44 @@ check_code = 10 - sum % 10
 
 end
 
+
+def self.checksum1(input)
+
+b = (1..input.length).map{|i| i%2==0?2:1}
+output = 10 - input.split('').map(&:to_i).zip(b).map{|i,j| k=i*j; k<10?k:1+k%10}.inject(&:+)%10
+
+end
+
+def self.checksum2(input)
+
+sum = 0
+input.split('').map(&:to_i).each_with_index{|v,i| k=(i%2==0)?v:(v*2<10)?v*2:1+(v*2)%10; sum= sum+k}
+output = 10 - sum%10
+
+end
+
+
+def self.checksum3(input)
+
+
+b=Hash[(0..9).collect{|i| [i,i*2<10?i*2:1+(i*2%10)]}]
+sum = 0
+input.split(//).collect(&:to_i).each_with_index{|v,i| sum=sum+(i%2==0?v:b[v])}
+output = 10 - sum%10
+
+end
+
+
+def self.checksum4(input)
+
+b=Hash[(0..9).collect{|i| [i,i*2<10?i*2:i*2-9]}]
+output = 10 - input.split(//).collect(&:to_i).zip((1..input.length).to_a).map{|v,i| i%2==0?b[v]:v}.inject(&:+)%10
+
+end
+
+
+
+
   def gritworks_number
 
 #XXX-XXXX-XXXX-XXXX 
@@ -129,7 +167,7 @@ end
 @second = @first_digit + @julian.to_s
 
 @number = @first + @second + @third + @fourth_first
-@checksum = Order.checksum(@number)
+@checksum = Order.checksum1(@number)
 
 
 @final = @first.to_s  + "-" + @second.to_s  + "-" + @third.to_s + "-" + @fourth_first.to_s + @checksum.to_s
