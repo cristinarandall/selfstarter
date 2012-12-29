@@ -154,7 +154,7 @@ $ <%= "%.2f" % @prod.price %>
 <% @prod = Product.find(item.product_id) %>
 
 <% @price = ((@prod.price.to_i) * (item.quantity.to_i) *(1.00)) %>
-$ <%= @price %>
+$ <%= "%.2f" % @price %>
 
 <% end %> 
 
