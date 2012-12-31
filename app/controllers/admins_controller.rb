@@ -35,7 +35,7 @@ end
 
 end
 
-def pay_desposit
+def pay_deposit
 
 @order = Order.find(params[:order_id])
 

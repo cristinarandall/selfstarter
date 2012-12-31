@@ -309,8 +309,8 @@ $(".charge-balance").live("click", function(e){
 
 
 var id = $(this).attr("data-id");
-$(this).removeClass("red").addClass("green");
-$(this).html("Successfully charged balance");
+//$(this).removeClass("red").addClass("green");
+//$(this).html("Successfully charged balance");
 $.ajax({
   url: "/pay_balance",
   type: 'POST',
@@ -318,6 +318,8 @@ $.ajax({
   success: function(selectValues){
 var json_object = JSON.parse(selectValues);
 var count = 0;
+$(".charge-balance").removeClass("red").addClass("green");
+$(".charge-balance").html("Successfully charged balance");
 alert("Successfully charged balance");
 }
 });
@@ -329,16 +331,20 @@ $(".charge-deposit").live("click", function(e){
 
 
 var id = $(this).attr("data-id");
-$(this).removeClass("blue").addClass("green");
-$(this).html("Successfully charged deposit");
+
+//$(this).removeClass("blue").addClass("green");
+//$(this).html("Successfully charged deposit");
 
 $.ajax({
-  url: "/pay_balance",
+  url: "/pay_deposit",
   type: 'POST',
   data: "order_id=" + id,
   success: function(selectValues){
 var json_object = JSON.parse(selectValues);
 var count = 0;
+
+$(".charge-deposit").removeClass("blue").addClass("green");
+$(".charge-deposit").html("Successfully charged deposit");
 alert("Successfully charged deposit");
 }
 });
