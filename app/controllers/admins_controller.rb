@@ -24,6 +24,7 @@ options[:ChargeFeeTo] = "Caller"
   response = AmazonFlexPay.pay(@order.balance, 'USD', @order.token, @order.uuid)
 @order.balance_payment_transaction_id =response.transaction_id
 @order.status = "Paid Deposit & Balance" 
+@order.balance_paid = true
 @order.save
 
 @return_hash = []
@@ -42,7 +43,8 @@ def pay_desposit
 options = {}
 options[:ChargeFeeTo] = "Caller"
   response = AmazonFlexPay.pay(@order.deposit, 'USD', @order.token, @order.uuid)
-@order.balance_payment_transaction_id =response.transaction_id
+@order.deposit_payment_transaction_id =response.transaction_id
+@order.deposit_paid = true
 @order.status = "Paid Deposit"
 @order.save
 
