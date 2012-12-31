@@ -26,6 +26,26 @@ options[:ChargeFeeTo] = "Caller"
 @order.status = "Paid Deposit & Balance" 
 @order.save
 
+@return_hash = []
+
+respond_to do |format|
+     format.js { render :json=>@return_hash.to_json }
+end
+
+end
+
+def pay_desposit
+
+@order = Order.find(params[:order_id])
+
+
+options = {}
+options[:ChargeFeeTo] = "Caller"
+  response = AmazonFlexPay.pay(@order.deposit, 'USD', @order.token, @order.uuid)
+@order.balance_payment_transaction_id =response.transaction_id
+@order.status = "Paid Deposit"
+@order.save
+
 
 
 
@@ -38,6 +58,11 @@ respond_to do |format|
 end
 
 end
+
+
+
+
+
 
 def products_in_order
 
