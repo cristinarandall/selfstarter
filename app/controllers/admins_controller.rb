@@ -151,7 +151,7 @@ end
 
 
 
-@return_hash << { :paid_deposit=>@order.paid_deposit, :paid_balance=>@order.paid_balance, :gritworks=>@order.gritworks, :order_id=>@order.id, :balance_payment_transaction_id=> @order.balance_payment_transaction_id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
+@return_hash << { :paid_deposit=>@order.deposit_paid, :paid_balance=>@order.balance_paid, :gritworks=>@order.gritworks, :order_id=>@order.id, :balance_payment_transaction_id=> @order.balance_payment_transaction_id, :status=>@order.status, :balance=> @order.balance, :address=>@address_string, :deposit=>@order.deposit, :total=>@order.total, :email=>@email, :name=>@name}
 
 
 respond_to do |format|
