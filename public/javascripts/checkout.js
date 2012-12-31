@@ -309,9 +309,27 @@ $(".charge-balance").live("click", function(e){
 
 
 var id = $(this).attr("data-id");
-
-
 $(this).removeClass("red").addClass("green");
+$(this).html("Successfully charged balance");
+$.ajax({
+  url: "/pay_balance",
+  type: 'POST',
+  data: "order_id=" + id,
+  success: function(selectValues){
+var json_object = JSON.parse(selectValues);
+var count = 0;
+alert("Successfully charged balance");
+}
+});
+
+});
+
+
+$(".charge-deposit").live("click", function(e){
+
+
+var id = $(this).attr("data-id");
+$(this).removeClass("blue").addClass("green");
 $(this).html("Successfully charged deposit");
 
 $.ajax({
@@ -321,9 +339,7 @@ $.ajax({
   success: function(selectValues){
 var json_object = JSON.parse(selectValues);
 var count = 0;
-
-
-
+alert("Successfully charged deposit");
 }
 });
 
