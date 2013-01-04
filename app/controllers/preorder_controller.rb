@@ -48,6 +48,7 @@ end
 @order.deposit = params[:deposit]
 @order_total = params[:balance].to_f + params[:deposit].to_f
 
+@order.shipping_cost = params[:shipping_cost]
 @order.total =  @order_total.to_i #@order_total.round(2)
 
 @order.save

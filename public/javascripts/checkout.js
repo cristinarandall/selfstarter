@@ -67,6 +67,8 @@ return 30;
 var amount = (total / 500) * 30;
 
 $(".total-shipping").html(amount);
+$(".total-shipping-cost").attr("value",amount);
+
 
 return amount;
 }
@@ -131,6 +133,7 @@ total_rebate = input_val + total_rebate;
 });
 
 $("#total-rebate").html(total_rebate.toFixed(2));
+
 
 
 }
