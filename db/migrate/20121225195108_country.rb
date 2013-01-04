@@ -1,8 +1,7 @@
 class Country < ActiveRecord::Migration
   def up
 
-add_column :orders, :gritworks, :string
-
+add_column :orders, :shipping_cost, :string
   end
 
   def down
