@@ -139,6 +139,7 @@ $("#total-rebate").html(total_rebate.toFixed(2));
 
 
 
+$("#total-shipping-cost").attr("value",$(".total-shipping").html());
 }
 
 
