@@ -61,13 +61,16 @@ function shipping_cost(total) {
 total = parseFloat(total);
 if (total < 500){
 $(".total-shipping").html("30");
+$("#total-shipping-cost").attr("value",amount);
+
+
 return 30;
 
 } else if (total > 500){
 var amount = (total / 500) * 30;
 
 $(".total-shipping").html(amount);
-$(".total-shipping-cost").attr("value",amount);
+$("#total-shipping-cost").attr("value",amount);
 
 
 return amount;

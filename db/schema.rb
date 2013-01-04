@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20121225195108) do
     t.integer  "deposit"
     t.float    "total"
     t.string   "gritworks"
+    t.string   "shipping_cost"
   end
 
   create_table "products", :force => true do |t|
