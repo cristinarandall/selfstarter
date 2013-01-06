@@ -44,7 +44,7 @@ end
 end
 
 
-@order.balance = params[:balance].to_i - 1 
+@order.balance = params[:balance].to_i
 @order.deposit = params[:deposit]
 @order_total = params[:balance].to_f + params[:deposit].to_f
 
