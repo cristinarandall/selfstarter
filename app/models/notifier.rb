@@ -3,7 +3,8 @@ class Notifier < ActionMailer::Base
 
 
 def order_status(order, items,email)
-  
+
+  @discount = order.total_discount
   @shipping_cost = order.shipping_cost
   @order = order
   @items = items

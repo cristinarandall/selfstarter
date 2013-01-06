@@ -55,6 +55,8 @@ else
 @order.shipping_cost = 0
 end
 
+
+@order.total_discount = params[:total_discount]
 @order.total =  @order_total.to_i #@order_total.round(2)
 
 @order.save

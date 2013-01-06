@@ -36,7 +36,7 @@
 									<table border="0" cellspacing="30" cellpadding="0" >
 										<tr>
 
-                                            <!--table row with logo--><td><img style="max-width: 250px;" src="https://s3.amazonaws.com/selfstarter/FundingSite-Checkout-Nov21-HeaderLogoOnly.png" alt="logo header" border="no" style="margin: 0px; padding: 0px; display: block;"/></td>
+                                            <!--table row with logo--><td><img style="width: 350px;" src="https://s3.amazonaws.com/selfstarter/FundingSite-Checkout-Nov21-HeaderLogoOnly.png" alt="logo header" border="no" style="margin: 0px; padding: 0px; display: block;"/></td>
 										</tr>
 									</table>
 								</td>
@@ -165,6 +165,27 @@ $ <%= "%.2f" % @price %>
 <% end %>
 
 
+
+
+                                                                        <!-- table row no5.-->
+                                                                        <tr>
+                                                                        <!-- empty table column -->
+                                                                        <td height="30" width="170" align="left" valign="middle" style="text-align: left;"></td>
+                                                                        <!-- empty table column -->
+                                                                        <td height="30" width="100" align="left" valign="middle" style="text-align: left;"></td>
+                                                                        <!-- empty table column -->
+                                                                        <td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
+                                                                        <!-- table column with subtotal text -->
+                                                                        <td height="30" width="100" align="left" valign="middle" style="text-align: left;"> Total Discount: </td>
+                                                                        <!-- table column with subtotal price -->
+                                                                        <td height="30" width="100" align="right" valign="middle" style="text-align: right;">
+- $ <%= "%.2f" % @discount %>
+
+</td>
+
+                                                                        </tr>
+
+
 									<!-- table row no5.-->
 									<tr>
 									<!-- empty table column -->
@@ -174,10 +195,14 @@ $ <%= "%.2f" % @price %>
 									<!-- empty table column -->
 									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
 									<!-- table column with subtotal text -->
-									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"> Shipping Fee: </td>
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"> International Shippin: </td>
 									<!-- table column with subtotal price -->
 									<td height="30" width="100" align="right" valign="middle" style="text-align: right;">
+<% if @shipping_cost > 0 %>
 $ <%= "%.2f" % @shipping_cost %>
+<% else %>
+N/A
+<% end %>
 </td>
 
 									</tr>

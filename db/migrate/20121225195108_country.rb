@@ -3,8 +3,7 @@ class Country < ActiveRecord::Migration
 
 
 
-remove_column :orders, :shipping_cost
-add_column :orders, :shipping_cost, :float
+add_column :orders, :total_discount, :float
   end
 
   def down
