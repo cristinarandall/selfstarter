@@ -100,7 +100,7 @@ $(".volume-discount").html(addCommas(volume_discount.toFixed(2)));
 var total_discount = volume_discount + base_discount;
 
 var percentage_tot_discount = (total_discount / total);
-$("#total-discount-value").attr(total_discount);
+$("#total-discount-value").attr("value", total_discount);
 var percentage_tot_discount=Math.round(percentage_tot_discount*100*100)/100;
 $(".total-discount").html(addCommas(percentage_tot_discount.toFixed(2)));
 if (jQuery("#outside-us").is(':checked')) {
