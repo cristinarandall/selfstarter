@@ -195,7 +195,7 @@ $ <%= "%.2f" % @price %>
 									<!-- empty table column -->
 									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
 									<!-- table column with subtotal text -->
-									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"> International Shippin: </td>
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"> International Shipping: </td>
 									<!-- table column with subtotal price -->
 									<td height="30" width="100" align="right" valign="middle" style="text-align: right;">
 <% if @shipping_cost > 0 %>
@@ -206,6 +206,28 @@ N/A
 </td>
 
 									</tr>
+
+
+
+                                                                        <tr>
+                                                                        <!-- empty table column -->
+                                                                        <td height="30" width="170" align="left" valign="middle" style="text-align: left;"></td>
+                                                                        <!-- empty table column -->
+                                                                        <td height="30" width="100" align="left" valign="middle" style="text-align: left;"></td>
+                                                                        <!-- empty table column -->
+                                                                        <td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
+                                                                        <!-- table column with total text -->
+                                                                        <td height="30" width="100" align="left" valign="middle" style="color: #646464; font-weight: bold; text-align: left;">Total:</td>
+                                                                        <!-- table column with total price -->
+                                                                        <td height="30" width="100" align="right" valign="middle" style="color: #646464; font-weight: bold; text-align: right;"> $
+
+<%= "%.2f" % (@order.total) %>
+
+</td>
+                                                                        </tr>
+
+
+
 									<!-- table row no6.-->
 									<tr>
 									<!-- empty table column -->
@@ -215,7 +237,7 @@ N/A
 									<!-- empty table column -->
 									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
 									<!-- table column with VAT text -->
-									<td height="30" width="100" align="left" valign="middle" style="text-align: left;">Deposit Paid:</td>
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;">Deposit ( Paid now ):</td>
 									<!-- table column with VAT price-->
                                     <!-- @tax = 0.16 -->
                                     <!-- @tax_total = @tax*(@order_total.to_i) -->
@@ -234,7 +256,7 @@ $ <%= "%.2f" % @deposit %>
 									<!-- empty table column -->
 									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
 									<!-- table column with VAT text -->
-									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"> Balance:</td>
+									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"> Balance (due just prior to shipment):</td>
 									<!-- table column with VAT price-->
 									<td height="30" width="100" align="right" valign="middle" style="text-align: right;">
 
@@ -242,22 +264,6 @@ $ <%= "%.2f" % @deposit %>
 $ <%= "%.2f" % @balance %></td>
 									</tr>
 									<!-- table row no7.-->
-									<tr>
-									<!-- empty table column -->
-									<td height="30" width="170" align="left" valign="middle" style="text-align: left;"></td>
-									<!-- empty table column -->
-									<td height="30" width="100" align="left" valign="middle" style="text-align: left;"></td>
-									<!-- empty table column -->
-									<td height="30" width="100" align="center" valign="middle" style="text-align: center;"></td>
-									<!-- table column with total text -->
-									<td height="30" width="100" align="left" valign="middle" style="color: #646464; font-weight: bold; text-align: left;">Total:</td>
-									<!-- table column with total price -->
-									<td height="30" width="100" align="right" valign="middle" style="color: #646464; font-weight: bold; text-align: right;"> $ 
-
-<%= "%.2f" % (@order.total) %> 
-
-</td>
-									</tr>
 								</table>
 							</td>
 							</tr>
