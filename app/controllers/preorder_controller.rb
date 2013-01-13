@@ -58,7 +58,9 @@ end
 
 @order.total_discount = params[:total_discount]
 @order.total =  @order_total #@order_total.round(2)
+@order.save
 
+@order.subtotal = @order_total - @order.shipping_cost + @order.total_discount
 @order.save
 
     # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
