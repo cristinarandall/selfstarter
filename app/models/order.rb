@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :address_one, :address_two, :city, :country, :number, :state, :status, :token, :transaction_id, :zip, :shipping, :tracking_number, :name, :price, :phone, :expiration, :user_id, :item_id, :balance_paid, :deposit_paid, :balance_payment_transaction_id, :deposit_payment_transaction_id
+  attr_accessible :address_one, :address_two, :city, :country, :number, :state, :status, :token, :transaction_id, :zip, :shipping, :tracking_number, :name, :price, :phone, :expiration, :user_id, :item_id, :balance, :balance_paid, :deposit, :deposit_paid, :balance_payment_transaction_id, :deposit_payment_transaction_id
   attr_readonly :uuid
   before_validation :generate_uuid!, :on => :create
   belongs_to :user
