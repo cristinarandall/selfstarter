@@ -18,15 +18,15 @@ require 'csv'
 end
 
 
- def self.to_csv_alternative(options = {})
-    CSV.generate(options) do |csv|
+# def self.to_csv_alternative(options = {})
+#    CSV.generate(options) do |csv|
 
       
-csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost", "number_of_products]
+#csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost", "number_of_products]
 #    csv << column_names
 
 
-      all.each do |order|
+#      all.each do |order|
 #        csv << product.attributes.values
 
 #@items = Item.find_by_order_id(order.id)
@@ -40,15 +40,15 @@ csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "addre
 #end
 
 
-@user = User.find(order.user_id)
-if @user
-        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost, order.number  ] #product.attributes.values_at(*column_names)
+#@user = User.find(order.user_id)
+#if @user
+#        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost, order.number  ] #product.attributes.values_at(*column_names)
 
-end
+#end
 
-      end
-    end
-  end
+#      end
+#    end
+#  end
 
 
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
