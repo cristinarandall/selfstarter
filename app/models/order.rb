@@ -22,7 +22,7 @@ end
     CSV.generate(options) do |csv|
 
       
-csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost", "number_of_products", "created_at", "date_balanced_paid", "date_deposit_paid"]
+csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost", "number_of_products", "created_at", "date_balanced_paid", "date_deposit_paid", "secondary_phone", "secondary_email"]
       all.each do |order|
 
 @global_quantity = 0
@@ -41,7 +41,7 @@ end
 
 @user = User.find(order.user_id)
 if @user
-        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost, order.number,  order.created_at, order.balance_paid_date, order.created_at] 
+        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost, order.number,  order.created_at, order.balance_paid_date, order.created_at, order.secondary_phone, order.secondary_email] 
 end
 
       end
