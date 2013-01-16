@@ -27,6 +27,7 @@ csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "addre
       all.each do |order|
 
 @global_quantity = 0
+@prod_string = ""
 
 @items = Item.find_all_by_order_id(order.id)
 for item in @items
