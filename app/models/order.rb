@@ -20,12 +20,21 @@ end
 
  def self.to_csv_alternative(options = {})
     CSV.generate(options) do |csv|
-#      csv << ["name", "email" ]
-    csv << column_names
 
-      all.each do |product|
+      
+csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost"]
+#    csv << column_names
+
+
+      all.each do |order|
 #        csv << product.attributes.values
-        csv << product.attributes.values_at(*column_names)
+
+
+@user = User.find(order.user_id)
+if @user
+        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost  ] #product.attributes.values_at(*column_names)
+end
+
       end
     end
   end
