@@ -29,6 +29,16 @@ csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "addre
       all.each do |order|
 #        csv << product.attributes.values
 
+@items = Item.find_by_order_id(order.id)
+for item in @items
+@prod = Product.find(item.product_id)
+@global_quantity = item.quantity.to_i + @global_quantity
+if @prod_string.match(@prod.name)
+else
+@prod_string = @prod_string + "/"+ @prod.name
+end
+end
+
 
 @user = User.find(order.user_id)
 if @user
