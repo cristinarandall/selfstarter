@@ -22,7 +22,7 @@ end
     CSV.generate(options) do |csv|
 
       
-csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost"]
+csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost", "number_of_products]
 #    csv << column_names
 
 
@@ -32,7 +32,8 @@ csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "addre
 
 @user = User.find(order.user_id)
 if @user
-        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost  ] #product.attributes.values_at(*column_names)
+        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost, order.number  ] #product.attributes.values_at(*column_names)
+
 end
 
       end
