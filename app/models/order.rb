@@ -18,37 +18,33 @@ require 'csv'
 end
 
 
-# def self.to_csv_alternative(options = {})
-#    CSV.generate(options) do |csv|
+ def self.to_csv_alternative(options = {})
+    CSV.generate(options) do |csv|
 
       
-#csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost", "number_of_products]
-#    csv << column_names
+csv << ["gritworks", "customer", "email" , "total", "balance", "deposit", "address_one", "address_two", "city", "state", "zip", "country", "status", "shipping_cost", "number_of_products"]
+
+      all.each do |order|
+
+@items = Item.find_by_order_id(order.id)
+for item in @items
+@prod = Product.find(item.product_id)
+@global_quantity = item.quantity.to_i + @global_quantity
+if @prod_string.match(@prod.name)
+else
+@prod_string = @prod_string + "/"+ @prod.name
+end
+end
 
 
-#      all.each do |order|
-#        csv << product.attributes.values
+@user = User.find(order.user_id)
+if @user
+        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost, order.number  ] 
+end
 
-#@items = Item.find_by_order_id(order.id)
-#for item in @items
-#@prod = Product.find(item.product_id)
-#@global_quantity = item.quantity.to_i + @global_quantity
-#if @prod_string.match(@prod.name)
-#else
-#@prod_string = @prod_string + "/"+ @prod.name
-#end
-#end
-
-
-#@user = User.find(order.user_id)
-#if @user
-#        csv << [ order.gritworks, @user.name, order.name, order.total, order.balance, order.deposit, order.address_one, order.address_two, order.city, order.state, order.zip, order.country, order.status, order.shipping_cost, order.number  ] #product.attributes.values_at(*column_names)
-
-#end
-
-#      end
-#    end
-#  end
+      end
+    end
+  end
 
 
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
